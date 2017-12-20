@@ -13,6 +13,7 @@ import FirebaseAuth
 
 class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
     
+    @IBOutlet var signInStackView:UIStackView!
 
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -50,21 +51,35 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
     }
     func setupFacebookLogin() {
         facebookLoginButton.delegate = self
-        facebookLoginButton.translatesAutoresizingMaskIntoConstraints = false
+        //facebookLoginButton.translatesAutoresizingMaskIntoConstraints = false
         
         let arrayOfPermissionsRequired = Array(["public_profile", "email"])
         
         facebookLoginButton.readPermissions = arrayOfPermissionsRequired
         
-        self.view.addSubview(facebookLoginButton)
-        facebookLoginButton.frame = getFacebookFrame()
+        //self.view.addSubview(facebookLoginButton)
+        //self.signInStackView.addArrangedSubview(facebookLoginButton)
+        self.signInStackView.insertArrangedSubview(facebookLoginButton, at: 1)
+        
+        //facebookLoginButton.frame = getFacebookFrame()
+        adjustHeight()
+    }
+    
+    func adjustHeight() {
+        let height = facebookLoginButton.frame.height
+        let width = facebookLoginButton.frame.width
+        let x = facebookLoginButton.frame.origin.x
+        let y = facebookLoginButton.frame.origin.y
+        
+        facebookLoginButton.frame = CGRect(x: x, y: y, width: width, height: CGFloat(height+10))
     }
     
     
     func getFacebookFrame() -> CGRect {
         let x = self.signInButton.frame.origin.x - 40
         let y = self.signInButton.frame.origin.y + 60
-        let width = self.signInButton.frame.width + 80
+        
+        let width = self.signInButton.frame.width //+ 80
         let height = self.signInButton.frame.height
         
         return CGRect(x: x, y: y, width: width, height: height)
