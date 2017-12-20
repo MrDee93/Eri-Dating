@@ -1,0 +1,922 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2FF8BB7F4960A1B34CE3D408 /* Pods_Eri_DatingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE60C073CF5955C1F49AB98B /* Pods_Eri_DatingTests.framework */; };
+		78A1408A18CD0693B63B03FF /* Pods_Eri_Dating.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6F6A1ECD486E31527B526F /* Pods_Eri_Dating.framework */; };
+		9300EBB01FE0172E00449446 /* UserBlocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9300EBAF1FE0172D00449446 /* UserBlocker.swift */; };
+		9300EBB21FE0372000449446 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9300EBB11FE0372000449446 /* AdminViewController.swift */; };
+		9300EBB41FE04AB800449446 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9300EBB31FE04AB800449446 /* UserListViewController.swift */; };
+		9300EBB61FE059F000449446 /* UserPhotoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9300EBB51FE059F000449446 /* UserPhotoListTableViewController.swift */; };
+		930D24C51FDFFBF300C25046 /* ReportingFacility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930D24C41FDFFBF300C25046 /* ReportingFacility.swift */; };
+		93112ACF1FA7465700EDBC15 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93112ACD1FA7465700EDBC15 /* FBSDKLoginKit.framework */; };
+		93112AD01FA7465700EDBC15 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93112ACE1FA7465700EDBC15 /* FBSDKCoreKit.framework */; };
+		931485751DEDF4E600B184AE /* UserDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931485741DEDF4E600B184AE /* UserDetailVC.swift */; };
+		93245D111E03F24E00646EA6 /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93245D101E03F24E00646EA6 /* CameraPicker.swift */; };
+		93245D131E04884700646EA6 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93245D121E04884700646EA6 /* MyProfileVC.swift */; };
+		9342B2131EF231D10092C409 /* SignUpFirstPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9342B2121EF231D10092C409 /* SignUpFirstPageVC.swift */; };
+		9342B24F1EF24CC60092C409 /* SignUpThirdPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9342B24E1EF24CC60092C409 /* SignUpThirdPageVC.swift */; };
+		9342B2511EF372DF0092C409 /* SignUpSecondPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9342B2501EF372DF0092C409 /* SignUpSecondPageVC.swift */; };
+		9342B2531EF378B90092C409 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9342B2521EF378B90092C409 /* Countries.swift */; };
+		9342B2581EF3A8260092C409 /* UsersDB+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9342B2561EF3A8260092C409 /* UsersDB+CoreDataClass.swift */; };
+		9342B25B1EF504160092C409 /* UpdateUserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9342B25A1EF504160092C409 /* UpdateUserLocation.swift */; };
+		9342B25D1EF52ADC0092C409 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9342B25C1EF52ADC0092C409 /* ResetPasswordVC.swift */; };
+		9342B2631EF789680092C409 /* ConnectedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9342B2621EF789680092C409 /* ConnectedImage.swift */; };
+		9342B2651EF796EC0092C409 /* FirebaseDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9342B2641EF796EC0092C409 /* FirebaseDatabase.framework */; };
+		93502A2A1EC5B2C000232D77 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93502A291EC5B2C000232D77 /* ProfileTableViewCell.swift */; };
+		93502A2C1EC67DDE00232D77 /* ProfileAboutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93502A2B1EC67DDE00232D77 /* ProfileAboutTableViewCell.swift */; };
+		9370D4591E68B3C600A29302 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370D4581E68B3C600A29302 /* ChatMessageCell.swift */; };
+		9370D45B1E70CB2700A29302 /* ChatInputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370D45A1E70CB2700A29302 /* ChatInputContainerView.swift */; };
+		9371C2AA1FCC5A61000F56A2 /* UsersDB+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371C2A91FCC5A60000F56A2 /* UsersDB+CoreDataProperties.swift */; };
+		9371C2AC1FCDA8A9000F56A2 /* FBRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371C2AB1FCDA8A9000F56A2 /* FBRegistration.swift */; };
+		9373B9B81E1094A4001CF25D /* BrowseCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62D2A1DEC996A008908E0 /* BrowseCVC.swift */; };
+		93758EDA1ECD588E00CBD57C /* EDColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93758ED91ECD588E00CBD57C /* EDColor.swift */; };
+		93758EDC1ECD60C800CBD57C /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93758EDB1ECD60C800CBD57C /* NavigationBar.swift */; };
+		937E89661DEC84C6002976A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937E89651DEC84C6002976A9 /* AppDelegate.swift */; };
+		937E89681DEC84C6002976A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937E89671DEC84C6002976A9 /* ViewController.swift */; };
+		937E896B1DEC84C6002976A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 937E89691DEC84C6002976A9 /* Main.storyboard */; };
+		937E896E1DEC84C6002976A9 /* Eri_Dating.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 937E896C1DEC84C6002976A9 /* Eri_Dating.xcdatamodeld */; };
+		937E89701DEC84C6002976A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 937E896F1DEC84C6002976A9 /* Assets.xcassets */; };
+		937E89731DEC84C6002976A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 937E89711DEC84C6002976A9 /* LaunchScreen.storyboard */; };
+		937E897E1DEC84C6002976A9 /* Eri_DatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937E897D1DEC84C6002976A9 /* Eri_DatingTests.swift */; };
+		9384308B1E06F577008392B1 /* ThumbnailCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9384308A1E06F577008392B1 /* ThumbnailCreator.swift */; };
+		93975BB01DF0D6AF009788F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93975BAF1DF0D6AF009788F8 /* GoogleService-Info.plist */; };
+		93975BB41DFF0B64009788F8 /* MessagesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93975BB31DFF0B64009788F8 /* MessagesTVC.swift */; };
+		93975BB71DFF1A0C009788F8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93975BB61DFF1A0C009788F8 /* Message.swift */; };
+		93975BB91E00891A009788F8 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93975BB81E00891A009788F8 /* Users.swift */; };
+		93975BBC1E01D5C4009788F8 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93975BBB1E01D5C4009788F8 /* AlertController.swift */; };
+		93975BBE1E01D9D4009788F8 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93975BBD1E01D9D4009788F8 /* DateFormat.swift */; };
+		93A002DA1E670C0A00F9EDA5 /* ChatLogControllerCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A002D91E670C0A00F9EDA5 /* ChatLogControllerCVC.swift */; };
+		93A002DC1E6715B500F9EDA5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A002DB1E6715B500F9EDA5 /* Extensions.swift */; };
+		93A002E01E67887300F9EDA5 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A002DF1E67887300F9EDA5 /* UserCell.swift */; };
+		93A482B71FB34E9C00815256 /* UserPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A482B61FB34E9B00815256 /* UserPhoto.swift */; };
+		93A4A4281FA20C94008AA2A5 /* UserPhotoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A4271FA20C94008AA2A5 /* UserPhotoImageView.swift */; };
+		93C11C041FD6E45900A01043 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C11C031FD6E45900A01043 /* PhotoViewController.swift */; };
+		93D4F6B71F9A5B3400DFBFAE /* UserConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4F6B61F9A5B3400DFBFAE /* UserConnectionStatus.swift */; };
+		93D4F6B91F9F774900DFBFAE /* FrameEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4F6B81F9F774900DFBFAE /* FrameEstimator.swift */; };
+		93D4F6BB1F9F7E1700DFBFAE /* CustomImageZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4F6BA1F9F7E1700DFBFAE /* CustomImageZoom.swift */; };
+		93F339B21EC6DAF4003D8AAB /* TextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F339B11EC6DAF4003D8AAB /* TextController.swift */; };
+		93F339B51EC6EF77003D8AAB /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F339B41EC6EF77003D8AAB /* LoadingView.swift */; };
+		93F62D2B1DEC996A008908E0 /* BrowseCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62D2A1DEC996A008908E0 /* BrowseCVC.swift */; };
+		93F62D2E1DEC9A46008908E0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62D2D1DEC9A46008908E0 /* LoginVC.swift */; };
+		93F62D331DECB589008908E0 /* EDUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62D321DECB589008908E0 /* EDUser.swift */; };
+		93F62D351DECB84F008908E0 /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F62D341DECB84F008908E0 /* UserCollectionViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		937E897A1DEC84C6002976A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 937E895A1DEC84C6002976A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 937E89611DEC84C6002976A9;
+			remoteInfo = "Eri Dating";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B6F6A1ECD486E31527B526F /* Pods_Eri_Dating.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eri_Dating.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C59F5B92D6D35F77B24DDE3 /* Pods-Eri DatingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eri DatingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eri DatingTests/Pods-Eri DatingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1EF47DDB781E5AD57E487842 /* Pods-Eri Dating.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eri Dating.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eri Dating/Pods-Eri Dating.debug.xcconfig"; sourceTree = "<group>"; };
+		714A8FEA08E882B62C1A39EC /* Pods-Eri Dating.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eri Dating.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eri Dating/Pods-Eri Dating.release.xcconfig"; sourceTree = "<group>"; };
+		8DB7C20701ABD0D33DE77016 /* Pods-Eri DatingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eri DatingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eri DatingTests/Pods-Eri DatingTests.release.xcconfig"; sourceTree = "<group>"; };
+		9300EBAF1FE0172D00449446 /* UserBlocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocker.swift; sourceTree = "<group>"; };
+		9300EBB11FE0372000449446 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
+		9300EBB31FE04AB800449446 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		9300EBB51FE059F000449446 /* UserPhotoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoListTableViewController.swift; sourceTree = "<group>"; };
+		930D24C41FDFFBF300C25046 /* ReportingFacility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingFacility.swift; sourceTree = "<group>"; };
+		93112ACD1FA7465700EDBC15 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-4.27.1/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		93112ACE1FA7465700EDBC15 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-4.27.1/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		931485741DEDF4E600B184AE /* UserDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailVC.swift; sourceTree = "<group>"; };
+		93245D101E03F24E00646EA6 /* CameraPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
+		93245D121E04884700646EA6 /* MyProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
+		9342B2121EF231D10092C409 /* SignUpFirstPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFirstPageVC.swift; sourceTree = "<group>"; };
+		9342B24E1EF24CC60092C409 /* SignUpThirdPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpThirdPageVC.swift; sourceTree = "<group>"; };
+		9342B2501EF372DF0092C409 /* SignUpSecondPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSecondPageVC.swift; sourceTree = "<group>"; };
+		9342B2521EF378B90092C409 /* Countries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		9342B2561EF3A8260092C409 /* UsersDB+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UsersDB+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9342B25A1EF504160092C409 /* UpdateUserLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserLocation.swift; sourceTree = "<group>"; };
+		9342B25C1EF52ADC0092C409 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
+		9342B2621EF789680092C409 /* ConnectedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedImage.swift; sourceTree = "<group>"; };
+		9342B2641EF796EC0092C409 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
+		93502A291EC5B2C000232D77 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		93502A2B1EC67DDE00232D77 /* ProfileAboutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAboutTableViewCell.swift; sourceTree = "<group>"; };
+		9370D4581E68B3C600A29302 /* ChatMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
+		9370D45A1E70CB2700A29302 /* ChatInputContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInputContainerView.swift; sourceTree = "<group>"; };
+		9371C2A91FCC5A60000F56A2 /* UsersDB+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UsersDB+CoreDataProperties.swift"; path = "/Users/dee/Work/XCode/Eri Dating/Eri Dating/UsersDB+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		9371C2AB1FCDA8A9000F56A2 /* FBRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRegistration.swift; sourceTree = "<group>"; };
+		93758ED91ECD588E00CBD57C /* EDColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EDColor.swift; sourceTree = "<group>"; };
+		93758EDB1ECD60C800CBD57C /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		937E89621DEC84C6002976A9 /* Eri Dating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eri Dating.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		937E89651DEC84C6002976A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		937E89671DEC84C6002976A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		937E896A1DEC84C6002976A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		937E896D1DEC84C6002976A9 /* Eri_Dating.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eri_Dating.xcdatamodel; sourceTree = "<group>"; };
+		937E896F1DEC84C6002976A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		937E89721DEC84C6002976A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		937E89741DEC84C6002976A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		937E89791DEC84C6002976A9 /* Eri DatingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eri DatingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		937E897D1DEC84C6002976A9 /* Eri_DatingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eri_DatingTests.swift; sourceTree = "<group>"; };
+		937E897F1DEC84C6002976A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9384308A1E06F577008392B1 /* ThumbnailCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailCreator.swift; sourceTree = "<group>"; };
+		93975BAF1DF0D6AF009788F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		93975BB31DFF0B64009788F8 /* MessagesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTVC.swift; sourceTree = "<group>"; };
+		93975BB61DFF1A0C009788F8 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		93975BB81E00891A009788F8 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		93975BBB1E01D5C4009788F8 /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		93975BBD1E01D9D4009788F8 /* DateFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
+		93A002D91E670C0A00F9EDA5 /* ChatLogControllerCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLogControllerCVC.swift; sourceTree = "<group>"; };
+		93A002DB1E6715B500F9EDA5 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		93A002DF1E67887300F9EDA5 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		93A482B61FB34E9B00815256 /* UserPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPhoto.swift; sourceTree = "<group>"; };
+		93A4A4271FA20C94008AA2A5 /* UserPhotoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoImageView.swift; sourceTree = "<group>"; };
+		93B91BB41FB49AEF0072875F /* Eri Dating.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Eri Dating.entitlements"; sourceTree = "<group>"; };
+		93C11C031FD6E45900A01043 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		93D4F6B61F9A5B3400DFBFAE /* UserConnectionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConnectionStatus.swift; sourceTree = "<group>"; };
+		93D4F6B81F9F774900DFBFAE /* FrameEstimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameEstimator.swift; sourceTree = "<group>"; };
+		93D4F6BA1F9F7E1700DFBFAE /* CustomImageZoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageZoom.swift; sourceTree = "<group>"; };
+		93F339B11EC6DAF4003D8AAB /* TextController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextController.swift; sourceTree = "<group>"; };
+		93F339B41EC6EF77003D8AAB /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		93F62D2A1DEC996A008908E0 /* BrowseCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseCVC.swift; sourceTree = "<group>"; };
+		93F62D2D1DEC9A46008908E0 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		93F62D321DECB589008908E0 /* EDUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EDUser.swift; sourceTree = "<group>"; };
+		93F62D341DECB84F008908E0 /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE60C073CF5955C1F49AB98B /* Pods_Eri_DatingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eri_DatingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		937E895F1DEC84C6002976A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93112ACF1FA7465700EDBC15 /* FBSDKLoginKit.framework in Frameworks */,
+				93112AD01FA7465700EDBC15 /* FBSDKCoreKit.framework in Frameworks */,
+				78A1408A18CD0693B63B03FF /* Pods_Eri_Dating.framework in Frameworks */,
+				9342B2651EF796EC0092C409 /* FirebaseDatabase.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		937E89761DEC84C6002976A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FF8BB7F4960A1B34CE3D408 /* Pods_Eri_DatingTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		312654D340C70DC0D818F452 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93112ACE1FA7465700EDBC15 /* FBSDKCoreKit.framework */,
+				93112ACD1FA7465700EDBC15 /* FBSDKLoginKit.framework */,
+				9342B2641EF796EC0092C409 /* FirebaseDatabase.framework */,
+				1B6F6A1ECD486E31527B526F /* Pods_Eri_Dating.framework */,
+				CE60C073CF5955C1F49AB98B /* Pods_Eri_DatingTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		93245D0B1E03241E00646EA6 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				9371C2A91FCC5A60000F56A2 /* UsersDB+CoreDataProperties.swift */,
+				9342B2561EF3A8260092C409 /* UsersDB+CoreDataClass.swift */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		93758ED81ECD583400CBD57C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				93A002DB1E6715B500F9EDA5 /* Extensions.swift */,
+				93758ED91ECD588E00CBD57C /* EDColor.swift */,
+				93758EDB1ECD60C800CBD57C /* NavigationBar.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		937E89591DEC84C6002976A9 = {
+			isa = PBXGroup;
+			children = (
+				93975BAF1DF0D6AF009788F8 /* GoogleService-Info.plist */,
+				937E89641DEC84C6002976A9 /* Eri Dating */,
+				937E897C1DEC84C6002976A9 /* Eri DatingTests */,
+				937E89631DEC84C6002976A9 /* Products */,
+				E599F906E33E63F7C8DCCC5D /* Pods */,
+				312654D340C70DC0D818F452 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		937E89631DEC84C6002976A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				937E89621DEC84C6002976A9 /* Eri Dating.app */,
+				937E89791DEC84C6002976A9 /* Eri DatingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		937E89641DEC84C6002976A9 /* Eri Dating */ = {
+			isa = PBXGroup;
+			children = (
+				93C11C021FD6E43200A01043 /* Custom Views */,
+				93B91BB41FB49AEF0072875F /* Eri Dating.entitlements */,
+				93758ED81ECD583400CBD57C /* Extensions */,
+				93F339B31EC6EF59003D8AAB /* Reusable Classes */,
+				93A002E11E67888600F9EDA5 /* Controllers */,
+				93245D0B1E03241E00646EA6 /* Core Data */,
+				93975BBA1E01D425009788F8 /* Classes */,
+				93975BB51DFF19FD009788F8 /* Messages */,
+				93F62D311DECB24F008908E0 /* User Registration */,
+				93F62D2C1DEC99C0008908E0 /* Cell Views */,
+				937E89651DEC84C6002976A9 /* AppDelegate.swift */,
+				937E89691DEC84C6002976A9 /* Main.storyboard */,
+				937E896F1DEC84C6002976A9 /* Assets.xcassets */,
+				937E89711DEC84C6002976A9 /* LaunchScreen.storyboard */,
+				937E89741DEC84C6002976A9 /* Info.plist */,
+				937E896C1DEC84C6002976A9 /* Eri_Dating.xcdatamodeld */,
+			);
+			path = "Eri Dating";
+			sourceTree = "<group>";
+		};
+		937E897C1DEC84C6002976A9 /* Eri DatingTests */ = {
+			isa = PBXGroup;
+			children = (
+				937E897D1DEC84C6002976A9 /* Eri_DatingTests.swift */,
+				937E897F1DEC84C6002976A9 /* Info.plist */,
+			);
+			path = "Eri DatingTests";
+			sourceTree = "<group>";
+		};
+		93975BB51DFF19FD009788F8 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				93975BB61DFF1A0C009788F8 /* Message.swift */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+		93975BBA1E01D425009788F8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				93F62D321DECB589008908E0 /* EDUser.swift */,
+				93975BBB1E01D5C4009788F8 /* AlertController.swift */,
+				93975BBD1E01D9D4009788F8 /* DateFormat.swift */,
+				93245D101E03F24E00646EA6 /* CameraPicker.swift */,
+				9384308A1E06F577008392B1 /* ThumbnailCreator.swift */,
+				9370D4581E68B3C600A29302 /* ChatMessageCell.swift */,
+				9370D45A1E70CB2700A29302 /* ChatInputContainerView.swift */,
+				9371C2AB1FCDA8A9000F56A2 /* FBRegistration.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		93A002E11E67888600F9EDA5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				93F62D2A1DEC996A008908E0 /* BrowseCVC.swift */,
+				931485741DEDF4E600B184AE /* UserDetailVC.swift */,
+				93975BB31DFF0B64009788F8 /* MessagesTVC.swift */,
+				93245D121E04884700646EA6 /* MyProfileVC.swift */,
+				937E89671DEC84C6002976A9 /* ViewController.swift */,
+				93A002D91E670C0A00F9EDA5 /* ChatLogControllerCVC.swift */,
+				93F339B11EC6DAF4003D8AAB /* TextController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		93C11C021FD6E43200A01043 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				93C11C031FD6E45900A01043 /* PhotoViewController.swift */,
+				9300EBAF1FE0172D00449446 /* UserBlocker.swift */,
+				9300EBB11FE0372000449446 /* AdminViewController.swift */,
+				9300EBB31FE04AB800449446 /* UserListViewController.swift */,
+				9300EBB51FE059F000449446 /* UserPhotoListTableViewController.swift */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		93F339B31EC6EF59003D8AAB /* Reusable Classes */ = {
+			isa = PBXGroup;
+			children = (
+				93975BB81E00891A009788F8 /* Users.swift */,
+				93A482B61FB34E9B00815256 /* UserPhoto.swift */,
+				93F339B41EC6EF77003D8AAB /* LoadingView.swift */,
+				9342B2521EF378B90092C409 /* Countries.swift */,
+				9342B25A1EF504160092C409 /* UpdateUserLocation.swift */,
+				9342B2621EF789680092C409 /* ConnectedImage.swift */,
+				93D4F6B61F9A5B3400DFBFAE /* UserConnectionStatus.swift */,
+				93D4F6B81F9F774900DFBFAE /* FrameEstimator.swift */,
+				93D4F6BA1F9F7E1700DFBFAE /* CustomImageZoom.swift */,
+				93A4A4271FA20C94008AA2A5 /* UserPhotoImageView.swift */,
+				930D24C41FDFFBF300C25046 /* ReportingFacility.swift */,
+			);
+			name = "Reusable Classes";
+			sourceTree = "<group>";
+		};
+		93F62D2C1DEC99C0008908E0 /* Cell Views */ = {
+			isa = PBXGroup;
+			children = (
+				93A002DF1E67887300F9EDA5 /* UserCell.swift */,
+				93F62D341DECB84F008908E0 /* UserCollectionViewCell.swift */,
+				93502A291EC5B2C000232D77 /* ProfileTableViewCell.swift */,
+				93502A2B1EC67DDE00232D77 /* ProfileAboutTableViewCell.swift */,
+			);
+			name = "Cell Views";
+			sourceTree = "<group>";
+		};
+		93F62D311DECB24F008908E0 /* User Registration */ = {
+			isa = PBXGroup;
+			children = (
+				93F62D2D1DEC9A46008908E0 /* LoginVC.swift */,
+				9342B2121EF231D10092C409 /* SignUpFirstPageVC.swift */,
+				9342B2501EF372DF0092C409 /* SignUpSecondPageVC.swift */,
+				9342B24E1EF24CC60092C409 /* SignUpThirdPageVC.swift */,
+				9342B25C1EF52ADC0092C409 /* ResetPasswordVC.swift */,
+			);
+			name = "User Registration";
+			sourceTree = "<group>";
+		};
+		E599F906E33E63F7C8DCCC5D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1EF47DDB781E5AD57E487842 /* Pods-Eri Dating.debug.xcconfig */,
+				714A8FEA08E882B62C1A39EC /* Pods-Eri Dating.release.xcconfig */,
+				1C59F5B92D6D35F77B24DDE3 /* Pods-Eri DatingTests.debug.xcconfig */,
+				8DB7C20701ABD0D33DE77016 /* Pods-Eri DatingTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		937E89611DEC84C6002976A9 /* Eri Dating */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 937E89821DEC84C6002976A9 /* Build configuration list for PBXNativeTarget "Eri Dating" */;
+			buildPhases = (
+				4420156BB51C6EAD5884FC09 /* [CP] Check Pods Manifest.lock */,
+				937E895E1DEC84C6002976A9 /* Sources */,
+				937E895F1DEC84C6002976A9 /* Frameworks */,
+				937E89601DEC84C6002976A9 /* Resources */,
+				5097BAF77B0A1B93FFBFF9DA /* [CP] Embed Pods Frameworks */,
+				0426AE2DCD991826807BCF2B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Eri Dating";
+			productName = "Eri Dating";
+			productReference = 937E89621DEC84C6002976A9 /* Eri Dating.app */;
+			productType = "com.apple.product-type.application";
+		};
+		937E89781DEC84C6002976A9 /* Eri DatingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 937E89851DEC84C6002976A9 /* Build configuration list for PBXNativeTarget "Eri DatingTests" */;
+			buildPhases = (
+				B2E47B300147DF46E88AEA28 /* [CP] Check Pods Manifest.lock */,
+				937E89751DEC84C6002976A9 /* Sources */,
+				937E89761DEC84C6002976A9 /* Frameworks */,
+				937E89771DEC84C6002976A9 /* Resources */,
+				F9427E2C7B7764A056390C66 /* [CP] Embed Pods Frameworks */,
+				71A35069A88A71A8DAB21C7C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				937E897B1DEC84C6002976A9 /* PBXTargetDependency */,
+			);
+			name = "Eri DatingTests";
+			productName = "Eri DatingTests";
+			productReference = 937E89791DEC84C6002976A9 /* Eri DatingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		937E895A1DEC84C6002976A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Dayan Yonnatan";
+				TargetAttributes = {
+					937E89611DEC84C6002976A9 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = S7WE6HW865;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					937E89781DEC84C6002976A9 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = S7WE6HW865;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 937E89611DEC84C6002976A9;
+					};
+				};
+			};
+			buildConfigurationList = 937E895D1DEC84C6002976A9 /* Build configuration list for PBXProject "Eri Dating" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 937E89591DEC84C6002976A9;
+			productRefGroup = 937E89631DEC84C6002976A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				937E89611DEC84C6002976A9 /* Eri Dating */,
+				937E89781DEC84C6002976A9 /* Eri DatingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		937E89601DEC84C6002976A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				937E89731DEC84C6002976A9 /* LaunchScreen.storyboard in Resources */,
+				937E89701DEC84C6002976A9 /* Assets.xcassets in Resources */,
+				93975BB01DF0D6AF009788F8 /* GoogleService-Info.plist in Resources */,
+				937E896B1DEC84C6002976A9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		937E89771DEC84C6002976A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0426AE2DCD991826807BCF2B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eri Dating/Pods-Eri Dating-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4420156BB51C6EAD5884FC09 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Eri Dating-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5097BAF77B0A1B93FFBFF9DA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Eri Dating/Pods-Eri Dating-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eri Dating/Pods-Eri Dating-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71A35069A88A71A8DAB21C7C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eri DatingTests/Pods-Eri DatingTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2E47B300147DF46E88AEA28 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Eri DatingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9427E2C7B7764A056390C66 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eri DatingTests/Pods-Eri DatingTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		937E895E1DEC84C6002976A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93975BBC1E01D5C4009788F8 /* AlertController.swift in Sources */,
+				930D24C51FDFFBF300C25046 /* ReportingFacility.swift in Sources */,
+				9342B2131EF231D10092C409 /* SignUpFirstPageVC.swift in Sources */,
+				9342B25B1EF504160092C409 /* UpdateUserLocation.swift in Sources */,
+				9384308B1E06F577008392B1 /* ThumbnailCreator.swift in Sources */,
+				93502A2C1EC67DDE00232D77 /* ProfileAboutTableViewCell.swift in Sources */,
+				93758EDC1ECD60C800CBD57C /* NavigationBar.swift in Sources */,
+				9371C2AA1FCC5A61000F56A2 /* UsersDB+CoreDataProperties.swift in Sources */,
+				93975BB41DFF0B64009788F8 /* MessagesTVC.swift in Sources */,
+				93F339B51EC6EF77003D8AAB /* LoadingView.swift in Sources */,
+				93C11C041FD6E45900A01043 /* PhotoViewController.swift in Sources */,
+				93A4A4281FA20C94008AA2A5 /* UserPhotoImageView.swift in Sources */,
+				9300EBB41FE04AB800449446 /* UserListViewController.swift in Sources */,
+				9300EBB21FE0372000449446 /* AdminViewController.swift in Sources */,
+				93F62D2B1DEC996A008908E0 /* BrowseCVC.swift in Sources */,
+				937E896E1DEC84C6002976A9 /* Eri_Dating.xcdatamodeld in Sources */,
+				93D4F6BB1F9F7E1700DFBFAE /* CustomImageZoom.swift in Sources */,
+				93975BB91E00891A009788F8 /* Users.swift in Sources */,
+				93A002DA1E670C0A00F9EDA5 /* ChatLogControllerCVC.swift in Sources */,
+				93758EDA1ECD588E00CBD57C /* EDColor.swift in Sources */,
+				9342B2511EF372DF0092C409 /* SignUpSecondPageVC.swift in Sources */,
+				93245D131E04884700646EA6 /* MyProfileVC.swift in Sources */,
+				9300EBB01FE0172E00449446 /* UserBlocker.swift in Sources */,
+				93975BBE1E01D9D4009788F8 /* DateFormat.swift in Sources */,
+				93A002E01E67887300F9EDA5 /* UserCell.swift in Sources */,
+				9342B2631EF789680092C409 /* ConnectedImage.swift in Sources */,
+				937E89681DEC84C6002976A9 /* ViewController.swift in Sources */,
+				93D4F6B71F9A5B3400DFBFAE /* UserConnectionStatus.swift in Sources */,
+				931485751DEDF4E600B184AE /* UserDetailVC.swift in Sources */,
+				9370D45B1E70CB2700A29302 /* ChatInputContainerView.swift in Sources */,
+				93975BB71DFF1A0C009788F8 /* Message.swift in Sources */,
+				9342B25D1EF52ADC0092C409 /* ResetPasswordVC.swift in Sources */,
+				93A002DC1E6715B500F9EDA5 /* Extensions.swift in Sources */,
+				937E89661DEC84C6002976A9 /* AppDelegate.swift in Sources */,
+				93F339B21EC6DAF4003D8AAB /* TextController.swift in Sources */,
+				9371C2AC1FCDA8A9000F56A2 /* FBRegistration.swift in Sources */,
+				93F62D351DECB84F008908E0 /* UserCollectionViewCell.swift in Sources */,
+				93A482B71FB34E9C00815256 /* UserPhoto.swift in Sources */,
+				9342B2581EF3A8260092C409 /* UsersDB+CoreDataClass.swift in Sources */,
+				9370D4591E68B3C600A29302 /* ChatMessageCell.swift in Sources */,
+				93D4F6B91F9F774900DFBFAE /* FrameEstimator.swift in Sources */,
+				9342B2531EF378B90092C409 /* Countries.swift in Sources */,
+				9342B24F1EF24CC60092C409 /* SignUpThirdPageVC.swift in Sources */,
+				93F62D2E1DEC9A46008908E0 /* LoginVC.swift in Sources */,
+				93245D111E03F24E00646EA6 /* CameraPicker.swift in Sources */,
+				9300EBB61FE059F000449446 /* UserPhotoListTableViewController.swift in Sources */,
+				93F62D331DECB589008908E0 /* EDUser.swift in Sources */,
+				93502A2A1EC5B2C000232D77 /* ProfileTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		937E89751DEC84C6002976A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9373B9B81E1094A4001CF25D /* BrowseCVC.swift in Sources */,
+				937E897E1DEC84C6002976A9 /* Eri_DatingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		937E897B1DEC84C6002976A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 937E89611DEC84C6002976A9 /* Eri Dating */;
+			targetProxy = 937E897A1DEC84C6002976A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		937E89691DEC84C6002976A9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				937E896A1DEC84C6002976A9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		937E89711DEC84C6002976A9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				937E89721DEC84C6002976A9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		937E89801DEC84C6002976A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+			};
+			name = Debug;
+		};
+		937E89811DEC84C6002976A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		937E89831DEC84C6002976A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EF47DDB781E5AD57E487842 /* Pods-Eri Dating.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Eri Dating/Eri Dating.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = S7WE6HW865;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/FirebaseDatabase/Frameworks",
+				);
+				INFOPLIST_FILE = "Eri Dating/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AlwaysHustlin.Eri-Dating";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		937E89841DEC84C6002976A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 714A8FEA08E882B62C1A39EC /* Pods-Eri Dating.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Eri Dating/Eri Dating.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = S7WE6HW865;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/FirebaseDatabase/Frameworks",
+				);
+				INFOPLIST_FILE = "Eri Dating/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AlwaysHustlin.Eri-Dating";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		937E89861DEC84C6002976A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C59F5B92D6D35F77B24DDE3 /* Pods-Eri DatingTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = S7WE6HW865;
+				INFOPLIST_FILE = "Eri DatingTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AlwaysHustlin.Eri-DatingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eri Dating.app/Eri Dating";
+			};
+			name = Debug;
+		};
+		937E89871DEC84C6002976A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DB7C20701ABD0D33DE77016 /* Pods-Eri DatingTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = S7WE6HW865;
+				INFOPLIST_FILE = "Eri DatingTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AlwaysHustlin.Eri-DatingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eri Dating.app/Eri Dating";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		937E895D1DEC84C6002976A9 /* Build configuration list for PBXProject "Eri Dating" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				937E89801DEC84C6002976A9 /* Debug */,
+				937E89811DEC84C6002976A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		937E89821DEC84C6002976A9 /* Build configuration list for PBXNativeTarget "Eri Dating" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				937E89831DEC84C6002976A9 /* Debug */,
+				937E89841DEC84C6002976A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		937E89851DEC84C6002976A9 /* Build configuration list for PBXNativeTarget "Eri DatingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				937E89861DEC84C6002976A9 /* Debug */,
+				937E89871DEC84C6002976A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		937E896C1DEC84C6002976A9 /* Eri_Dating.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				937E896D1DEC84C6002976A9 /* Eri_Dating.xcdatamodel */,
+			);
+			currentVersion = 937E896D1DEC84C6002976A9 /* Eri_Dating.xcdatamodel */;
+			path = Eri_Dating.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 937E895A1DEC84C6002976A9 /* Project object */;
+}
