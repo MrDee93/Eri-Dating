@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rbz-AZ-pIK">
-                                <rect key="frame" x="16" y="375" width="343" height="282"/>
+                                <rect key="frame" x="16" y="385" width="343" height="272"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Aja-ux-6J6">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="80"/>
@@ -42,8 +43,8 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="20N-O4-BD5">
-                                        <rect key="frame" x="62.5" y="100" width="218" height="182"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="20N-O4-BD5">
+                                        <rect key="frame" x="62.5" y="100" width="218" height="172"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fno-8l-X2g">
                                                 <rect key="frame" x="0.0" y="0.0" width="218" height="41"/>
@@ -57,7 +58,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXH-j9-n4H">
-                                                <rect key="frame" x="0.0" y="71" width="218" height="39"/>
+                                                <rect key="frame" x="0.0" y="66" width="218" height="39"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Forgot your password?">
                                                     <color key="titleColor" red="0.93673089379999996" green="0.1050345755" blue="0.050026348800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -67,7 +68,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zah-0Y-DlU">
-                                                <rect key="frame" x="0.0" y="140" width="218" height="42"/>
+                                                <rect key="frame" x="0.0" y="130" width="218" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                                 <state key="normal" title="New user? Tap here">
                                                     <color key="titleColor" red="0.0" green="0.61803756480000005" blue="0.15450939120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -84,17 +85,23 @@
                                     <constraint firstAttribute="trailing" secondItem="Aja-ux-6J6" secondAttribute="trailing" id="nEZ-y9-9uR"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="PB5-Mn-WcX">
-                                <rect key="frame" x="7.5" y="140" width="360" height="169"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" horizontalCompressionResistancePriority="100" verticalCompressionResistancePriority="100" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="PB5-Mn-WcX">
+                                <rect key="frame" x="7.5" y="30" width="360" height="169"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PB5-Mn-WcX" secondAttribute="height" multiplier="360:169" id="idO-eM-cCm"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="PB5-Mn-WcX" firstAttribute="centerX" secondItem="D8a-GI-p08" secondAttribute="centerX" id="6Xs-aR-9v4"/>
+                            <constraint firstAttribute="trailing" secondItem="PB5-Mn-WcX" secondAttribute="trailing" constant="7.5" id="Iyk-30-Kag"/>
                             <constraint firstItem="Aja-ux-6J6" firstAttribute="top" relation="lessThanOrEqual" secondItem="PB5-Mn-WcX" secondAttribute="bottom" priority="600" constant="50" id="SX0-s1-YVs"/>
                             <constraint firstItem="Hc6-Pr-hWQ" firstAttribute="top" secondItem="rbz-AZ-pIK" secondAttribute="bottom" constant="10" id="Xfo-VQ-5Q5"/>
+                            <constraint firstItem="PB5-Mn-WcX" firstAttribute="leading" secondItem="D8a-GI-p08" secondAttribute="leading" constant="7.5" id="eOS-Mz-xhW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rbz-AZ-pIK" secondAttribute="trailing" id="heG-84-gxE"/>
                             <constraint firstItem="rbz-AZ-pIK" firstAttribute="leading" secondItem="D8a-GI-p08" secondAttribute="leadingMargin" id="saF-dR-Am1"/>
+                            <constraint firstItem="PB5-Mn-WcX" firstAttribute="top" secondItem="4Go-KQ-tt2" secondAttribute="bottom" constant="10" id="wpU-wo-WPL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xkZ-I1-Krb"/>
