@@ -13,7 +13,6 @@ import FacebookCore
 import FBSDKLoginKit
 import FirebaseMessaging
 import UserNotifications
-// blablabla
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
