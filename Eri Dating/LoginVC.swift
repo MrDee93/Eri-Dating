@@ -13,6 +13,8 @@ import FirebaseAuth
 
 class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
     
+    @IBOutlet var termsOfUseSwitch:UISwitch!
+    @IBOutlet var termsOfUseLabel:UILabel!
     @IBOutlet var signInStackView:UIStackView!
 
     @IBOutlet var emailTextField: UITextField!
@@ -25,53 +27,90 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
+    
+    var fbSetup:Bool = false
     var facebookLoginButton:FBSDKLoginButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("View did load loginvc")
         facebookLoginButton = FBSDKLoginButton()
         
         setupLoginManager()
         
         // Do any additional setup after loading the view.
+        
+        createGestureRecognizers()
+    }
+    @objc func openTermsOfUse() {
+        print("Open terms of use!")
+    }
+    func createGestureRecognizers() {
+        termsOfUseLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openTermsOfUse)))
+        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleBackgroundTap(_:)))
         self.view.addGestureRecognizer(tapGestureRecognizer)
     }
+    
+    
     func setupLoginManager() {
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
         appdelegate.loginManager = FBSDKLoginManager()
     }
 
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        setupFacebookLogin()
+        if (!fbSetup) {
+            print("SETTING UP FACEBOOK LOGIN@@@@@@@@")
+            fbSetup = true
+            setupFacebookLogin()
+        }
     }
+   
     func setupFacebookLogin() {
+        
         facebookLoginButton.delegate = self
-        //facebookLoginButton.translatesAutoresizingMaskIntoConstraints = false
+        facebookLoginButton.translatesAutoresizingMaskIntoConstraints = false
         
         let arrayOfPermissionsRequired = Array(["public_profile", "email"])
         
         facebookLoginButton.readPermissions = arrayOfPermissionsRequired
         
-        //self.view.addSubview(facebookLoginButton)
-        //self.signInStackView.addArrangedSubview(facebookLoginButton)
+
         self.signInStackView.insertArrangedSubview(facebookLoginButton, at: 1)
         
         //facebookLoginButton.frame = getFacebookFrame()
+        findAndRemoveFBHeightConstraint()
         adjustHeight()
+    }
+    func findAndRemoveFBHeightConstraint() {
+        for constraint in facebookLoginButton.constraints {
+            if constraint.constant == 28 {
+                constraint.isActive = false
+            }
+        }
     }
     
     func adjustHeight() {
-        let height = facebookLoginButton.frame.height
+        print("Adjusting height")
+        //let height = facebookLoginButton.frame.height
         let width = facebookLoginButton.frame.width
         let x = facebookLoginButton.frame.origin.x
         let y = facebookLoginButton.frame.origin.y
         
-        facebookLoginButton.frame = CGRect(x: x, y: y, width: width, height: CGFloat(height+10))
+        let newHeight = CGFloat(48) //height + CGFloat(20)
+        let newWidth = CGFloat(200)
+        
+        facebookLoginButton.frame = CGRect(x: x, y: y, width: newWidth, height: newHeight)
+        
+        let facebookHeightAnchor = facebookLoginButton.heightAnchor.constraint(equalToConstant: newHeight)
+        facebookHeightAnchor.isActive = true
+        facebookHeightAnchor.priority = UILayoutPriority(1000)
+        let facebookWidthAnchor = facebookLoginButton.widthAnchor.constraint(equalToConstant: newWidth)
+        facebookHeightAnchor.isActive = true
+        facebookHeightAnchor.priority = UILayoutPriority(1000)
     }
     
     
@@ -254,6 +293,10 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBAction func signIn(_ sender: Any) {
         if emailTextField.text == "" || passwordTextField.text == "" {
+            return
+        }
+        if (!termsOfUseSwitch.isOn) {
+            print("Terms of use not accepted.")
             return
         }
         

@@ -232,6 +232,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         self.window?.rootViewController?.view.isUserInteractionEnabled = true
     }
     
+    var checkConnectionCount:Int = 0
     func checkConnectionOnce() {
         let connectedReference = Database.database().reference(withPath: ".info/connected")
         
@@ -243,8 +244,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     self.setOnline()
                     self.removeCheckConnectionDialog()
                 } else {
-                    self.disableUserInteraction()
-                    self.noConnectionTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.showNoConnectionError), userInfo: nil, repeats: false)
+                    if self.checkConnectionCount == 0 {
+                        self.checkConnectionCount += 1
+                        self.checkConnectionOnce()
+                        print("Checking connection again.")
+                    } else {
+                        self.disableUserInteraction()
+                        self.noConnectionTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.showNoConnectionError), userInfo: nil, repeats: false)
+                    }
                 }
             } else {
                 self.disableUserInteraction()
@@ -296,7 +303,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func showLogin() {
-        //isMainActive = false
+        if let windowRestorationID = self.window?.rootViewController?.restorationIdentifier {
+            if windowRestorationID == "LoginNavigationController" {
+                return
+            }
+        }
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let myStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
 
