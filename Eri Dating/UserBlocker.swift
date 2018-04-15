@@ -10,37 +10,6 @@ import UIKit
 import FirebaseDatabase
 
 class UserBlocker {
-    /*
-    let ref = Database.database().reference().child("users")
-    let childRef = ref.child(userUID)
-    let values = ["name":newName] as [String:Any]
-    childRef.updateChildValues(values)
-    */
-    
-    /*
-     Database.database().reference().child("user-messages").child(uid).child(chatPartnerId).removeValue(completionBlock: { (error, databaseref) in
-     if error != nil {
-     print("Failed to delete message:", error!)
-     return
-     }
-     DispatchQueue.main.async {
-     self.messagesDictionary.removeValue(forKey: chatPartnerId)
-     self.attemptReloadOfTable()
-     }
-     })
-     Database.database().reference().child("user-messages").child(chatPartnerId).child(uid).removeValue(completionBlock: { (error, databaseref) in
-     if error != nil {
-     print("Failed to delete message:", error!)
-     return
-     }
-     DispatchQueue.main.async {
-     self.messagesDictionary.removeValue(forKey: chatPartnerId)
-     self.attemptReloadOfTable()
-     }
-     })
- 
-     */
-    
     
     static func getRegisteredUID() -> String? {
        return (UIApplication.shared.delegate as? AppDelegate)?.activeUser.uid
@@ -82,8 +51,6 @@ class UserBlocker {
                         }
                     })
                 }
-                
-                
             })
         }
     }
@@ -106,12 +73,9 @@ class UserBlocker {
                         }
                     })
                 }
-                
-                
             })
             if(foundUser == nil || foundUser == false) {
                 vc.isUserBlocked = false
-                print("User isnt blocked")
             }
         }
     }

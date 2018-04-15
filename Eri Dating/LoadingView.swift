@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoadingView:NSObject {
+final class LoadingView:NSObject {
     var viewcontroller:UIViewController?
     var spinner:UIActivityIndicatorView?
     var alertController:UIAlertController?

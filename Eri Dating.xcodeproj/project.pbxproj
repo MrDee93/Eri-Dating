@@ -17,6 +17,7 @@
 		93112ACF1FA7465700EDBC15 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93112ACD1FA7465700EDBC15 /* FBSDKLoginKit.framework */; };
 		93112AD01FA7465700EDBC15 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93112ACE1FA7465700EDBC15 /* FBSDKCoreKit.framework */; };
 		931485751DEDF4E600B184AE /* UserDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931485741DEDF4E600B184AE /* UserDetailVC.swift */; };
+		93162755200013E3007A6E18 /* TermsOfUseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93162754200013E3007A6E18 /* TermsOfUseVC.swift */; };
 		93245D111E03F24E00646EA6 /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93245D101E03F24E00646EA6 /* CameraPicker.swift */; };
 		93245D131E04884700646EA6 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93245D121E04884700646EA6 /* MyProfileVC.swift */; };
 		9342B2131EF231D10092C409 /* SignUpFirstPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9342B2121EF231D10092C409 /* SignUpFirstPageVC.swift */; };
@@ -28,6 +29,7 @@
 		9342B25D1EF52ADC0092C409 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9342B25C1EF52ADC0092C409 /* ResetPasswordVC.swift */; };
 		9342B2631EF789680092C409 /* ConnectedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9342B2621EF789680092C409 /* ConnectedImage.swift */; };
 		9342B2651EF796EC0092C409 /* FirebaseDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9342B2641EF796EC0092C409 /* FirebaseDatabase.framework */; };
+		93493F0C2012639500B387B0 /* ProfilePhotoChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93493F0B2012639500B387B0 /* ProfilePhotoChecker.swift */; };
 		93502A2A1EC5B2C000232D77 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93502A291EC5B2C000232D77 /* ProfileTableViewCell.swift */; };
 		93502A2C1EC67DDE00232D77 /* ProfileAboutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93502A2B1EC67DDE00232D77 /* ProfileAboutTableViewCell.swift */; };
 		9370D4591E68B3C600A29302 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370D4581E68B3C600A29302 /* ChatMessageCell.swift */; };
@@ -88,10 +90,12 @@
 		9300EBB11FE0372000449446 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		9300EBB31FE04AB800449446 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		9300EBB51FE059F000449446 /* UserPhotoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoListTableViewController.swift; sourceTree = "<group>"; };
+		93015CD12083D611005B6CA6 /* Eri_Dating 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Eri_Dating 2.xcdatamodel"; sourceTree = "<group>"; };
 		930D24C41FDFFBF300C25046 /* ReportingFacility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingFacility.swift; sourceTree = "<group>"; };
 		93112ACD1FA7465700EDBC15 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-4.27.1/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		93112ACE1FA7465700EDBC15 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-4.27.1/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		931485741DEDF4E600B184AE /* UserDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailVC.swift; sourceTree = "<group>"; };
+		93162754200013E3007A6E18 /* TermsOfUseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseVC.swift; sourceTree = "<group>"; };
 		93245D101E03F24E00646EA6 /* CameraPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
 		93245D121E04884700646EA6 /* MyProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		9342B2121EF231D10092C409 /* SignUpFirstPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFirstPageVC.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 		9342B25C1EF52ADC0092C409 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
 		9342B2621EF789680092C409 /* ConnectedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedImage.swift; sourceTree = "<group>"; };
 		9342B2641EF796EC0092C409 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
+		93493F0B2012639500B387B0 /* ProfilePhotoChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoChecker.swift; sourceTree = "<group>"; };
 		93502A291EC5B2C000232D77 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		93502A2B1EC67DDE00232D77 /* ProfileAboutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAboutTableViewCell.swift; sourceTree = "<group>"; };
 		9370D4581E68B3C600A29302 /* ChatMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
@@ -186,6 +191,7 @@
 		93245D0B1E03241E00646EA6 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				937E896C1DEC84C6002976A9 /* Eri_Dating.xcdatamodeld */,
 				9371C2A91FCC5A60000F56A2 /* UsersDB+CoreDataProperties.swift */,
 				9342B2561EF3A8260092C409 /* UsersDB+CoreDataClass.swift */,
 			);
@@ -241,7 +247,6 @@
 				937E896F1DEC84C6002976A9 /* Assets.xcassets */,
 				937E89711DEC84C6002976A9 /* LaunchScreen.storyboard */,
 				937E89741DEC84C6002976A9 /* Info.plist */,
-				937E896C1DEC84C6002976A9 /* Eri_Dating.xcdatamodeld */,
 			);
 			path = "Eri Dating";
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 				93D4F6BA1F9F7E1700DFBFAE /* CustomImageZoom.swift */,
 				93A4A4271FA20C94008AA2A5 /* UserPhotoImageView.swift */,
 				930D24C41FDFFBF300C25046 /* ReportingFacility.swift */,
+				93493F0B2012639500B387B0 /* ProfilePhotoChecker.swift */,
 			);
 			name = "Reusable Classes";
 			sourceTree = "<group>";
@@ -341,6 +347,7 @@
 				9342B2501EF372DF0092C409 /* SignUpSecondPageVC.swift */,
 				9342B24E1EF24CC60092C409 /* SignUpThirdPageVC.swift */,
 				9342B25C1EF52ADC0092C409 /* ResetPasswordVC.swift */,
+				93162754200013E3007A6E18 /* TermsOfUseVC.swift */,
 			);
 			name = "User Registration";
 			sourceTree = "<group>";
@@ -615,6 +622,7 @@
 				93F62D2B1DEC996A008908E0 /* BrowseCVC.swift in Sources */,
 				937E896E1DEC84C6002976A9 /* Eri_Dating.xcdatamodeld in Sources */,
 				93D4F6BB1F9F7E1700DFBFAE /* CustomImageZoom.swift in Sources */,
+				93162755200013E3007A6E18 /* TermsOfUseVC.swift in Sources */,
 				93975BB91E00891A009788F8 /* Users.swift in Sources */,
 				93A002DA1E670C0A00F9EDA5 /* ChatLogControllerCVC.swift in Sources */,
 				93758EDA1ECD588E00CBD57C /* EDColor.swift in Sources */,
@@ -643,6 +651,7 @@
 				9342B24F1EF24CC60092C409 /* SignUpThirdPageVC.swift in Sources */,
 				93F62D2E1DEC9A46008908E0 /* LoginVC.swift in Sources */,
 				93245D111E03F24E00646EA6 /* CameraPicker.swift in Sources */,
+				93493F0C2012639500B387B0 /* ProfilePhotoChecker.swift in Sources */,
 				9300EBB61FE059F000449446 /* UserPhotoListTableViewController.swift in Sources */,
 				93F62D331DECB589008908E0 /* EDUser.swift in Sources */,
 				93502A2A1EC5B2C000232D77 /* ProfileTableViewCell.swift in Sources */,
@@ -808,7 +817,7 @@
 					"$(PROJECT_DIR)/Pods/FirebaseDatabase/Frameworks",
 				);
 				INFOPLIST_FILE = "Eri Dating/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "AlwaysHustlin.Eri-Dating";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -830,7 +839,7 @@
 					"$(PROJECT_DIR)/Pods/FirebaseDatabase/Frameworks",
 				);
 				INFOPLIST_FILE = "Eri Dating/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "AlwaysHustlin.Eri-Dating";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -909,9 +918,10 @@
 		937E896C1DEC84C6002976A9 /* Eri_Dating.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				93015CD12083D611005B6CA6 /* Eri_Dating 2.xcdatamodel */,
 				937E896D1DEC84C6002976A9 /* Eri_Dating.xcdatamodel */,
 			);
-			currentVersion = 937E896D1DEC84C6002976A9 /* Eri_Dating.xcdatamodel */;
+			currentVersion = 93015CD12083D611005B6CA6 /* Eri_Dating 2.xcdatamodel */;
 			path = Eri_Dating.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -14,16 +14,14 @@ import AVFoundation
 
 private let reuseIdentifier = "cellId"
 
-class ChatLogControllerCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ConnectedImageDelegate {
+final class ChatLogControllerCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ConnectedImageDelegate {
     
     var viewIsVisible:Bool?
     var messages = [Message]()
     
     var user:EDUser? {
         didSet {
-            //navigationItem.title = user?.name
             navigationItem.titleView = createTitleView(name: (user?.name)!)
-            navigationItem.titleView?.centerXAnchor.anchorWithOffset(to: )
             observeMessages()
         }
     }
@@ -44,7 +42,6 @@ class ChatLogControllerCVC: UICollectionViewController, UICollectionViewDelegate
         userLabel.textAlignment = .center
         
         view.addSubview(userLabel)
-        //onlineStatusImageView.rightAnchor.constraint(equalTo: userLabel.leftAnchor, constant: 10).isActive = true
         
         return view
     }

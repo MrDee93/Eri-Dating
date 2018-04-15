@@ -23,31 +23,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rbz-AZ-pIK">
-                                <rect key="frame" x="16" y="311" width="343" height="346"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rbz-AZ-pIK">
+                                <rect key="frame" x="16" y="269" width="343" height="388"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Aja-ux-6J6">
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="500" verticalCompressionResistancePriority="1000" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Aja-ux-6J6">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="80"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ulU-Kn-sb9">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ulU-Kn-sb9">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="XjS-ph-goh"/>
+                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zKq-Tf-7mq">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zKq-Tf-7mq">
                                                 <rect key="frame" x="0.0" y="50" width="343" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="JYR-jc-EAO"/>
+                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="20N-O4-BD5">
-                                        <rect key="frame" x="19.5" y="100" width="304" height="246"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="20N-O4-BD5">
+                                        <rect key="frame" x="26.5" y="90" width="290" height="298"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fno-8l-X2g">
-                                                <rect key="frame" x="52" y="0.0" width="200" height="41"/>
+                                                <rect key="frame" x="45" y="0.0" width="200" height="41"/>
                                                 <color key="backgroundColor" red="0.93673089379999996" green="0.1050345755" blue="0.050026348800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="TOf-yx-pat"/>
@@ -60,25 +66,26 @@
                                                     <action selector="signIn:" destination="zyK-FJ-GeO" eventType="touchUpInside" id="otM-3u-1gZ"/>
                                                 </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wOL-dt-XWb">
-                                                <rect key="frame" x="0.0" y="71" width="304" height="34"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="wOL-dt-XWb">
+                                                <rect key="frame" x="0.0" y="88.5" width="290" height="34"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LRd-Hu-4Az">
                                                         <rect key="frame" x="0.0" y="1.5" width="51" height="31"/>
                                                     </switch>
-                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing in or registering, you have agreed to these Terms of Use" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cO-MW-FUw">
-                                                        <rect key="frame" x="54" y="0.0" width="250" height="34"/>
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing in or registering, you have agreed to these Terms of Use" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7cO-MW-FUw">
+                                                        <rect key="frame" x="60" y="0.0" width="230" height="34"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="250" id="JxI-xP-wpU"/>
+                                                            <constraint firstAttribute="height" constant="34" id="2nz-a5-ITC"/>
+                                                            <constraint firstAttribute="width" constant="230" id="JxI-xP-wpU"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXH-j9-n4H">
-                                                <rect key="frame" x="43.5" y="135" width="217" height="39"/>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="740" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXH-j9-n4H">
+                                                <rect key="frame" x="36.5" y="169.5" width="217" height="39"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Forgot your password?">
                                                     <color key="titleColor" red="0.93673089379999996" green="0.1050345755" blue="0.050026348800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -87,8 +94,8 @@
                                                     <segue destination="Tx9-Ri-LMa" kind="show" id="AIZ-Pi-TqC"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zah-0Y-DlU">
-                                                <rect key="frame" x="43" y="204" width="218" height="42"/>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="740" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zah-0Y-DlU">
+                                                <rect key="frame" x="36" y="256" width="218" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                                 <state key="normal" title="New user? Tap here">
                                                     <color key="titleColor" red="0.0" green="0.61803756480000005" blue="0.15450939120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -98,6 +105,9 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="CXH-j9-n4H" firstAttribute="top" secondItem="wOL-dt-XWb" secondAttribute="bottom" constant="5" id="BZo-kd-ejv"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -108,7 +118,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" horizontalCompressionResistancePriority="100" verticalCompressionResistancePriority="100" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="PB5-Mn-WcX">
                                 <rect key="frame" x="7.5" y="30" width="360" height="169"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="PB5-Mn-WcX" secondAttribute="height" multiplier="360:169" id="idO-eM-cCm"/>
+                                    <constraint firstAttribute="width" secondItem="PB5-Mn-WcX" secondAttribute="height" multiplier="180:84.5" id="idO-eM-cCm"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -116,7 +126,7 @@
                         <constraints>
                             <constraint firstItem="PB5-Mn-WcX" firstAttribute="centerX" secondItem="D8a-GI-p08" secondAttribute="centerX" id="6Xs-aR-9v4"/>
                             <constraint firstAttribute="trailing" secondItem="PB5-Mn-WcX" secondAttribute="trailing" constant="7.5" id="Iyk-30-Kag"/>
-                            <constraint firstItem="Aja-ux-6J6" firstAttribute="top" relation="lessThanOrEqual" secondItem="PB5-Mn-WcX" secondAttribute="bottom" priority="600" constant="50" id="SX0-s1-YVs"/>
+                            <constraint firstItem="Aja-ux-6J6" firstAttribute="top" secondItem="PB5-Mn-WcX" secondAttribute="bottom" constant="70" identifier="verticalSpaceUnderLogo" id="Put-5m-ayN"/>
                             <constraint firstItem="Hc6-Pr-hWQ" firstAttribute="top" secondItem="rbz-AZ-pIK" secondAttribute="bottom" constant="10" id="Xfo-VQ-5Q5"/>
                             <constraint firstItem="PB5-Mn-WcX" firstAttribute="leading" secondItem="D8a-GI-p08" secondAttribute="leading" constant="7.5" id="eOS-Mz-xhW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rbz-AZ-pIK" secondAttribute="trailing" id="heG-84-gxE"/>
@@ -524,7 +534,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="YK3-aT-msl">
-                                <rect key="frame" x="144" y="100" width="205" height="25"/>
+                                <rect key="frame" x="143" y="100" width="206" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="7I9-Wk-0bQ"/>
                                 </constraints>
@@ -533,9 +543,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lKt-5S-nTz">
-                                <rect key="frame" x="7" y="70" width="125" height="125"/>
+                                <rect key="frame" x="7" y="70" width="124" height="124"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="Mlo-e9-Xtn"/>
+                                    <constraint firstAttribute="width" constant="125" identifier="widthConstraint" id="Mlo-e9-Xtn"/>
+                                    <constraint firstAttribute="width" secondItem="lKt-5S-nTz" secondAttribute="height" multiplier="1:1" id="fgN-3Z-EuA"/>
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zK2-do-YC9">
@@ -560,7 +571,7 @@
                                 </constraints>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="p2z-Q5-UrX">
-                                <rect key="frame" x="144" y="132" width="205" height="25"/>
+                                <rect key="frame" x="143" y="132" width="206" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="bT3-Be-Xoq"/>
                                 </constraints>
@@ -569,14 +580,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red" translatesAutoresizingMaskIntoConstraints="NO" id="xo5-TT-TA2">
-                                <rect key="frame" x="144" y="70" width="20" height="20"/>
+                                <rect key="frame" x="143" y="70" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="FZN-83-1V7"/>
                                     <constraint firstAttribute="height" constant="20" id="mQ9-gh-shF"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlL-b0-gCB">
-                                <rect key="frame" x="166" y="70" width="59" height="21"/>
+                                <rect key="frame" x="165" y="70" width="59" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="59" id="IuZ-NQ-pOr"/>
                                 </constraints>
@@ -585,7 +596,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WKQ-C1-ilX">
-                                <rect key="frame" x="16" y="310" width="343" height="300"/>
+                                <rect key="frame" x="16" y="309" width="343" height="301"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="GvQ-4F-dkG"/>
@@ -620,7 +631,7 @@
                             <constraint firstItem="LlL-b0-gCB" firstAttribute="leading" secondItem="xo5-TT-TA2" secondAttribute="trailing" constant="2" id="91s-Rl-hi9"/>
                             <constraint firstItem="lKt-5S-nTz" firstAttribute="leading" secondItem="j2t-e1-wJt" secondAttribute="leadingMargin" constant="-9" id="GsM-QR-NtW"/>
                             <constraint firstItem="xo5-TT-TA2" firstAttribute="top" secondItem="LlL-b0-gCB" secondAttribute="top" id="KGQ-eA-wKd"/>
-                            <constraint firstItem="zK2-do-YC9" firstAttribute="top" secondItem="p2z-Q5-UrX" secondAttribute="bottom" constant="41" id="LDO-4Z-iHf"/>
+                            <constraint firstItem="zK2-do-YC9" firstAttribute="top" secondItem="p2z-Q5-UrX" secondAttribute="bottom" constant="40" identifier="scrollViewSpaceConstraint" id="LDO-4Z-iHf"/>
                             <constraint firstAttribute="trailing" secondItem="zK2-do-YC9" secondAttribute="trailing" id="RTg-yA-ODu"/>
                             <constraint firstItem="xo5-TT-TA2" firstAttribute="centerY" secondItem="LlL-b0-gCB" secondAttribute="centerY" id="Re3-YS-Yrg"/>
                             <constraint firstItem="xo5-TT-TA2" firstAttribute="leading" secondItem="YK3-aT-msl" secondAttribute="leading" id="Weh-aJ-1b2"/>
@@ -747,7 +758,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <navigationItem title="Administrator Access" id="QcP-Ks-cKm">
+                                    <navigationItem title="Reports" id="QcP-Ks-cKm">
                                         <barButtonItem key="backBarButtonItem" title="Cancel" id="Cpt-SL-gzd"/>
                                         <barButtonItem key="leftBarButtonItem" title="Exit" id="1gQ-Wp-OS2">
                                             <color key="tintColor" red="0.93673089379999996" green="0.1050345755" blue="0.050026348800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1156,10 +1167,10 @@
             </objects>
             <point key="canvasLocation" x="1631.2" y="761.46926536731644"/>
         </scene>
-        <!--View Controller-->
+        <!--Terms Of UseVC-->
         <scene sceneID="FPj-85-z2A">
             <objects>
-                <viewController id="ldv-pY-TbI" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TermsOfUseVC" id="ldv-pY-TbI" customClass="TermsOfUseVC" customModule="Eri_Dating" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sEf-Fy-WBC"/>
                         <viewControllerLayoutGuide type="bottom" id="WWo-nD-LS0"/>
@@ -1168,26 +1179,101 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BbX-gh-Fr6">
-                                <rect key="frame" x="67" y="20" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BbX-gh-Fr6">
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <string key="text">Welcome to Eri Dating, app and service provided by Dayan Yonnatan, (“us,” “we,” the “Company” or “Eri Dating”).
+
+1. Acceptance of Terms of Use Agreement. 
+By creating a Eri Dating account, whether through a mobile device, mobile application or computer (collectively, the “Service”) you agree to be bound by (i) these Terms of Use, and (ii) any terms disclosed and agreed to by you if you purchase additional features, products or services we offer on the Service (collectively, this “Agreement”). If you do not accept and agree to be bound by all of the terms of this Agreement, please do not use the Service.
+
+We may make changes to this Agreement and to the Services from time to time. We may do this for a variety of reasons including to reflect changes in or requirements of the law, new features, or changes in business practices. The most recent version is the version that applies. If you continue to use the Services after the changes become effective, then you agree to the revised Agreement.
+
+2. Eligibility.
+You must be at least 16 years of age to create an account on Eri Dating and use the Service. By creating an account and using the Service, you represent and warrant that:
+	•	you can form a binding contract with Eri Dating, 
+	•	you will comply with this Agreement and all applicable local, state, national and international laws, rules and regulations.
+
+3. Your Account.
+In order to use Eri Dating, you may sign in using your Facebook login.  If you do so, you authorize us to access and use certain Facebook account information, including but not limited to your public Facebook profile. We only save and display information that you want displayed on the Eri Dating platform for other users to see. If you delete photos or data, we will not be able to retrieve it again.
+You are responsible for maintaining the confidentiality of your login credentials you use to sign up for Eri Dating, and you are solely responsible for all activities that occur under those credentials. If you think someone has gained access to your account, please immediately contact dayan.yon@gmail.com.
+
+4. Safety; Your Interactions with Other Users.
+Though Eri Dating strives to encourage a respectful user experience through features like the User Chat that allows users to communicate, it is not responsible for the conduct of any user on or off of the Services. You agree to use caution in all interactions with other users, particularly if you decide to communicate off the Service or meet in person. You should not provide your financial information (for example, your credit card or bank account information), or wire or otherwise send money, to other users.
+YOU ARE SOLELY RESPONSIBLE FOR YOUR INTERACTIONS WITH OTHER USERS. YOU UNDERSTAND THAT ERI DATING DOES NOT CONDUCT CRIMINAL BACKGROUND CHECKS ON ITS USERS OR OTHERWISE INQUIRE INTO THE BACKGROUND OF ITS USERS. ERI DATING MAKES NO REPRESENTATIONS OR WARRANTIES AS TO THE CONDUCT OF USERS. ERI DATING RESERVES THE RIGHT TO CONDUCT ANY CRIMINAL BACKGROUND CHECK OR OTHER SCREENINGS (SUCH AS SEX OFFENDER REGISTER SEARCHES) AT ANY TIME USING AVAILABLE PUBLIC RECORDS.
+
+5. Rights Eri Dating Grants You.
+Eri Dating grants you a personal, worldwide, royalty-free, non-assignable, nonexclusive, revocable, and non-sublicensable license to access and use the Services. This license is for the sole purpose of letting you use and enjoy the Services’ benefits as intended by Eri Dating and permitted by this Agreement. Therefore, you agree not to:
+	•	use the Service or any content contained in the Service for any commercial purposes without our written consent.
+	•	copy, modify, transmit, create any derivative works from, make use of, or reproduce in any way any copyrighted material, images, trademarks, trade names, service marks, or other intellectual property, content or proprietary information accessible through the Service without Eri Dating’s prior written consent.
+	•	express or imply that any statements you make are endorsed by Eri Dating.
+	•	use any robot, bot, spider, crawler, scraper, site search/retrieval application, proxy or other manual or automatic device, method or process to access, retrieve, index, “data mine,” or in any way reproduce or circumvent the navigational structure or presentation of the Service or its contents.
+	•	use the Services in any way that could interfere with, disrupt or negatively affect the Service or the servers or networks connected to the Service.
+	•	upload viruses or other malicious code or otherwise compromise the security of the Services.
+	•	forge headers or otherwise manipulate identifiers in order to disguise the origin of any information transmitted to or through the Service.
+	•	“frame” or “mirror” any part of the Service without Eri Dating’s prior written authorization.
+	•	use meta tags or code or other devices containing any reference to Eri Dating or the Service (or any trademark, trade name, service mark, logo or slogan of Eri Dating) to direct any person to any other website for any purpose.
+	•	modify, adapt, sublicense, translate, sell, reverse engineer, decipher, decompile or otherwise disassemble any portion of the Service, or cause others to do so.
+	•	use or develop any third-party applications that interact with the Services or other users’ Content or information without our written consent.
+	•	use, access, or publish the Eri Dating application programming interface without our written consent.
+	•	probe, scan or test the vulnerability of our Services or any system or network.
+	•	encourage or promote any activity that violates this Agreement.
+The Company may investigate and take any available legal action in response to illegal and/ or unauthorized uses of the Service, including termination of your account.
+Any software that we provide you may automatically download and install upgrades, updates, or other new features. You may be able to adjust these automatic downloads through your device’s settings.
+
+6. Rights you Grant Eri Dating.
+By creating an account, you grant to Eri Dating a worldwide, transferable, sub-licensable, royalty-free, right and license to host, store, use, copy, display, reproduce, adapt, edit, publish, modify and distribute information you authorize us to access from Facebook, as well as any information you post, upload, display or otherwise make available (collectively, “post”) on the Service or transmit to other users (collectively, “Content”). Our license to your Content is subject to your rights under applicable law (for example laws regarding personal data protection to the extent any Content contains personal information as defined by those laws) and is for the limited purpose of operating, developing, providing, and improving the Service and researching and developing new ones. You agree that any Content you place or that you authorize us to place on the Service may be viewed by other users and may be viewed by any person visiting or participating in the Service (such as individuals who may receive shared Content from other Eri Dating users).
+You agree that all information that you submit upon creation of your account, including information submitted from your Facebook account, is accurate and truthful and you have the right to post the Content on the Service and grant the license to Eri Dating above.
+You understand and agree that we may monitor or review any Content you post as part of a Service. We may delete any Content, in whole or in part, that in our sole judgment violates this Agreement or may harm the reputation of the Service.
+When communicating with our customer care representatives, you agree to be respectful and kind. If we feel that your behavior towards any of our customer care representatives or other employees is at any time threatening or offensive, we reserve the right to immediately terminate your account.
+In consideration for Eri Dating allowing you to use the Services, you agree that we, our affiliates, and our third-party partners may place advertising on the Services. By submitting suggestions or feedback to Eri Dating regarding our Services, you agree that Eri Dating may use and share such feedback for any purpose without compensating you.
+You agree that Eri Dating may access, preserve and disclose your account information and Content if required to do so by law or in a good faith belief that such access, preservation or disclosure is reasonably necessary, such as to: (i) comply with legal process; (ii) enforce this Agreement; (iii) respond to claims that any Content violates the rights of third parties; (iv) respond to your requests for customer service; or (v) protect the rights, property or personal safety of the Company or any other person.
+
+7. Community Rules. 
+By using the Services, you agree that you will not:
+	•	use the Service for any purpose that is illegal or prohibited by this Agreement.
+	•	spam, solicit money from or defraud any users.
+	•	impersonate any person or entity or post any images of another person without his or her permission.
+	•	bully, “stalk,” intimidate, harass or defame any person.
+	•	post any Content that violates or infringes anyone’s rights, including rights of publicity, privacy, copyright, trademark or other intellectual property or contract right.
+	•	post any Content that is hate speech, threatening, sexually explicit or pornographic; incites violence; or contains nudity or graphic or gratuitous violence.
+	•	post any Content that promotes racism, bigotry, hatred or physical harm of any kind against any group or individual.
+	•	solicit passwords for any purpose, or personal identifying information for commercial or unlawful purposes from other users or disseminate another person’s personal information without his or her permission.
+	•	use another user’s account.
+	•	create another account if we have already terminated your account, unless you have our permission.
+Eri Dating reserves the right to investigate and/ or terminate your account without a refund of any purchases if you have misused the Service or behaved in a way that Eri Dating regards as inappropriate or unlawful, including actions or communications that occur off the Service but involve users you meet through the Service.
+
+8. Other Users’ Content.
+Although Eri Dating reserves the right to review and remove Content that violates this Agreement, such Content is the sole responsibility of the user who posts it, and Eri Dating cannot guarantee that all Content will comply with this Agreement. If you see Content on the Services that violates this Agreement, please report it within the Services or via dayan.yon@gmail.com.
+
+9. Disclaimers.
+ERI DATING PROVIDES THE SERVICE ON AN “AS IS” AND “AS AVAILABLE” BASIS AND TO THE EXTENT PERMITTED BY APPLICABLE LAW, GRANTS NO WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE WITH RESPECT TO THE SERVICE (INCLUDING ALL CONTENT CONTAINED THEREIN), INCLUDING, WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF SATISFACTORY QUALITY, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT. ERI DATING DOES NOT REPRESENT OR WARRANT THAT (A) THE SERVICE WILL BE UNINTERRUPTED, SECURE OR ERROR FREE, (B) ANY DEFECTS OR ERRORS IN THE SERVICE WILL BE CORRECTED, OR (C) THAT ANY CONTENT OR INFORMATION YOU OBTAIN ON OR THROUGH THE SERVICES WILL BE ACCURATE.
+ERI DATING TAKES NO RESPONSIBILITY FOR ANY CONTENT THAT YOU OR ANOTHER USER OR THIRD PARTY POSTS, SENDS OR RECEIVES THROUGH THE SERVICES. ANY MATERIAL DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE SERVICE IS ACCESSED AT YOUR OWN DISCRETION AND RISK.
+
+10. Third Party Services.
+The Service may contain advertisements and promotions offered by third parties and links to other web sites or resources. Eri Dating is not responsible for the availability (or lack of availability) of such external websites or resources. If you choose to interact with the third parties made available through our Service, such party’s terms will govern their relationship with you. Eri Dating is not responsible or liable for such third parties’ terms or actions.
+
+11. Limitation of Liability.
+TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL ERI DATING, ITS AFFILIATES, EMPLOYEES, LICENSORS OR SERVICE PROVIDERS BE LIABLE FOR ANY INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL OR PUNITIVE DAMAGES, INCLUDING, WITHOUT LIMITATION, LOSS OF PROFITS, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM: (I) YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE SERVICES, (II) THE CONDUCT OR CONTENT OF OTHER USERS OR THIRD PARTIES ON, THROUGH, OR FOLLOWING USE OF THE SERVICES; OR (III) UNAUTHORIZED ACCESS, USE OR ALTERATION OF YOUR CONTENT, EVEN IF ERI DATING HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN NO EVENT WILL ERI DATING’S AGGREGATE LIABILITY TO YOU FOR ALL CLAIMS RELATING TO THE SERVICE EXCEED THE AMOUNT PAID, IF ANY, BY YOU TO ERI DATING FOR THE SERVICE WHILE YOU HAVE AN ACCOUNT.
+SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF CERTAIN DAMAGES, SO SOME OR ALL OF THE EXCLUSIONS AND LIMITATIONS IN THIS SECTION MAY NOT APPLY TO YOU.
+
+12. Indemnity by You.
+You agree, to the extent permitted under applicable law, to indemnify, defend and hold harmless Eri Dating, our affiliates, and their and our respective officers, directors, agents, and employees from and against any and all complaints, demands, claims, damages, losses, costs, liabilities and expenses, including attorney’s fees, due to, arising out of, or relating in any way to your access to or use of the Services, your Content, or your breach of this Agreement.
+
+13. Entire Agreement; Other.
+This Agreement, and any terms disclosed and agreed to by you if you purchase additional features, products or services we offer on the Service, contains the entire agreement between you and Eri Dating regarding the use of the Service. If any provision of this Agreement is held invalid, the remainder of this Agreement shall continue in full force and effect. The failure of the Company to exercise or enforce any right or provision of this Agreement shall not constitute a waiver of such right or provision. You agree that your Eri Dating account is non-transferable and all of your rights to your account and its Content terminate upon your death. No agency, partnership, joint venture or employment is created as a result of this Agreement and you may not make any representations or bind Eri Dating in any manner.
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5y-xP-run">
-                                <rect key="frame" x="47" y="629" width="85" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Disagree"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8u-4a-TNg">
-                                <rect key="frame" x="267" y="629" width="85" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Agree"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BbX-gh-Fr6" firstAttribute="top" secondItem="sEf-Fy-WBC" secondAttribute="bottom" id="FTC-fh-B8x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BbX-gh-Fr6" secondAttribute="trailing" id="Flf-9Z-XAr"/>
+                            <constraint firstItem="WWo-nD-LS0" firstAttribute="top" secondItem="BbX-gh-Fr6" secondAttribute="bottom" id="jxx-zt-knC"/>
+                            <constraint firstItem="BbX-gh-Fr6" firstAttribute="leading" secondItem="qZJ-fa-5Ja" secondAttribute="leadingMargin" id="niJ-sG-CJr"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CgZ-5g-1aN" userLabel="First Responder" sceneMemberID="firstResponder"/>

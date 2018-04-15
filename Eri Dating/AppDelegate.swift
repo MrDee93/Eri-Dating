@@ -25,11 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     // To log out from Facebook
      var loginManager:FBSDKLoginManager?
     
-    private lazy var checkInternetConnection: Void = {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
-            self.checkConnection()
-        })
-    }()
+    
     
     // For Firebase Notifications
     func setupFirebaseMessaging(application: UIApplication) {
@@ -123,7 +119,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         FirebaseApp.configure()
         FirebaseAuth = Auth.auth()
 
-        _ = checkInternetConnection
+        _ = checkInternetConnection // replace with init of connection checker and include users uid
         
         addFirebaseStateListener()
         
@@ -157,6 +153,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
         }
     }
+    
+    // Connection checker beginning
+    private lazy var checkInternetConnection: Void = {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+            self.checkConnection()
+        })
+    }()
+    
     func setOnline() {
         if let uid = Auth.auth().currentUser?.uid {
             let connectedUsersRef = Database.database().reference().child("connected_users")
@@ -258,8 +262,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 self.noConnectionTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.showNoConnectionError), userInfo: nil, repeats: false)
             }
         })
-        
     }
+    // End of connection checker
     
 
     func signOut() {
@@ -355,8 +359,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
          error conditions that could cause the creation of the store to fail.
         */
         let container = NSPersistentContainer(name: "Eri_Dating")
+        
+        let storeDescription = NSPersistentStoreDescription()
+        storeDescription.shouldInferMappingModelAutomatically = true
+        storeDescription.shouldMigrateStoreAutomatically = true
+        container.persistentStoreDescriptions = [storeDescription]
+        
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
+                
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                  
@@ -371,6 +382,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        
         return container
     }()
 

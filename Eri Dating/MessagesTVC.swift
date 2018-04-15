@@ -10,7 +10,7 @@ import Firebase
 import UIKit
 import AVFoundation
 
-class MessagesTVC: UITableViewController {
+final class MessagesTVC: UITableViewController {
 
     var messages = [Message]()
     var messagesDictionary = [String: Message]()

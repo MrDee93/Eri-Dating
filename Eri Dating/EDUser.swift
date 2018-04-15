@@ -8,8 +8,8 @@
 
 import UIKit
 
-class EDUser: NSObject {
-
+final class EDUser: NSObject, Codable {
+    
     var name:String?
     var DOB:String?
     var country:String?
@@ -89,6 +89,16 @@ class EDUser: NSObject {
             self.gender = usersgender
         }
     }
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case DOB = "dateofbirth"
+        case about = "about"
+        case id = "uid"
+        case profilePicUrl = "profileimageurl"
+        case country = "country"
+        case city = "city"
+        case gender = "gender"
+    }
     
     func set(name:String, DOB:String, country:String, profilePic:UIImage) {
         self.name = name
@@ -103,5 +113,69 @@ class EDUser: NSObject {
         self.DOB = DOB
         self.country = country
     }
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(self.name, forKey: .name)
+        try container.encode(self.DOB, forKey: .DOB)
+        try container.encode(self.id, forKey: .id)
+        try container.encode(self.country, forKey: .country)
+        try container.encode(self.city, forKey: .city)
+        try container.encode(self.profilePicUrl, forKey: .profilePicUrl)
+        
+
+        /*
+        let dateofbirth = try values.decode(String.self, forKey: .DOB)
+        self.DOB = dateofbirth
+        
+        let id = try values.decode(String.self, forKey: .id)
+        self.id = id
+        
+        let country = try values.decode(String.self, forKey: .country)
+        self.country = name
+        
+        
+        let city = try values.decode(String.self, forKey: .city)
+        self.city = city
+        
+        let profilepicurl = try values.decode(String.self, forKey: .profilePicUrl)
+        self.profilePicUrl = profilepicurl*/
+    }
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        let name = try values.decode(String.self, forKey: .name)
+        self.name = name
+    
+        let dateofbirth = try values.decode(String.self, forKey: .DOB)
+        self.DOB = dateofbirth
+        
+        let id = try values.decode(String.self, forKey: .id)
+        self.id = id
+        
+        let country = try values.decode(String.self, forKey: .country)
+        self.country = name
+    
+        
+        let city = try values.decode(String.self, forKey: .city)
+        self.city = city
+    
+        let profilepicurl = try values.decode(String.self, forKey: .profilePicUrl)
+        self.profilePicUrl = profilepicurl
+    
+        
+        /*
+        guard let quantity = try Int(values.decode(String.self, forKey: .quantity)) else {
+            throw DecodingError.dataCorrupted(.init(codingPath: [CodingKeys.quantity], debugDescription: "Expecting string representation of Int"))
+        }
+        self.quantity = quantity*/
+    }
+    
     
 }
+
+
+
+
+
+

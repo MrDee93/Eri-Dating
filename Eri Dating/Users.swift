@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import Firebase
 
-class Users {
+final class Users {
     static func createUserFromCoreDataDB(userDB:UsersDB) -> EDUser {
         let user:EDUser = EDUser()
         
@@ -60,13 +60,11 @@ class Users {
             return
         }
         
-        var integer:Int = 0
         
         for(_, element) in fetchedData.enumerated() {
             DispatchQueue.main.async {
             appDelegate.persistentContainer.viewContext.delete(element)
             }
-            integer = integer + 1
         }
         DispatchQueue.main.async {
             appDelegate.saveContext()
@@ -105,12 +103,18 @@ class Users {
                 if (!self.isEqualTo(objectKey, appDelegate.activeUser.uid)) {
                 //if (!self.isEqualToUserEmail(myEmail: appDelegate.activeUser.email!, fetchedEmail: object.value(forKey: "email") as! String)) {
                     appDelegate.persistentContainer.viewContext.perform({
+                        guard let newUserName = object.value(forKey: "name") as? String else {
+                            return
+                        }
+                        guard let newUserID = object.value(forKey: "uid") as? String else {
+                            return
+                        }
                         let newUser:UsersDB = NSEntityDescription.insertNewObject(forEntityName: "UsersDB", into: appDelegate.persistentContainer.viewContext) as! UsersDB
-                        newUser.name = object.value(forKey: "name") as? String
+                        newUser.name = newUserName
                         newUser.dateofbirth = object.value(forKey: "dateofbirth") as? String
                         newUser.country = object.value(forKey: "country") as? String
                         newUser.city = object.value(forKey: "city") as? String
-                        newUser.userID = object.value(forKey: "uid") as? String
+                        newUser.userID = newUserID
                         if let about = object.value(forKey: "about") as? String {
                             newUser.about = about
                         }
@@ -196,7 +200,7 @@ class Users {
         let values = ["about":newAboutInfo] as [String : Any]
         childRef.updateChildValues(values)
     }
-    // FIXME: Refactoring....23/11/17
+
     static func addUserToDB(email:String, name:String, dateOfBirth:String, country:String, userUID:String, gender:Gender) {
         addUserToDB(email: email, name: name, dateOfBirth: dateOfBirth, country: country, city: nil, userUID: userUID, gender:gender)
     }

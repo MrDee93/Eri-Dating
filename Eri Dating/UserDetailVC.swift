@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserDetailVC: UIViewController, ConnectedImageDelegate, UITableViewDataSource, UITableViewDelegate {
+final class UserDetailVC: UIViewController, ConnectedImageDelegate, UITableViewDataSource, UITableViewDelegate {
     
     var countOfExtraImageViews:Int = 1
     var connectedImage:ConnectedImage!
@@ -18,6 +18,7 @@ class UserDetailVC: UIViewController, ConnectedImageDelegate, UITableViewDataSou
     @IBOutlet var userScrollView:UIScrollView!
     
     @IBOutlet var userProfileImageView: UIImageView!
+    
     @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var userLocationLabel: UILabel!
     
@@ -32,6 +33,23 @@ class UserDetailVC: UIViewController, ConnectedImageDelegate, UITableViewDataSou
             connectionStatusImageView.isUserInteractionEnabled = false
         }
     }
+    func checkSize() {
+        let height = UIScreen.main.bounds.size.height
+        if height < 500 {
+            for constraint in self.userProfileImageView.constraints {
+                if constraint.identifier == "widthConstraint" {
+                    constraint.constant = 100
+                }
+            }
+            for constraint in self.view.constraints {
+                if constraint.identifier == "scrollViewSpaceConstraint" {
+                    constraint.constant = 20
+                }
+            }
+        }
+        
+    }
+    
     func setupImageView(imageView: UIImageView) {
         imageView.layer.cornerRadius = 16
         imageView.layer.masksToBounds = true
@@ -132,10 +150,16 @@ class UserDetailVC: UIViewController, ConnectedImageDelegate, UITableViewDataSou
         }
     }
     
+    // FIXME
     override func viewDidLoad() {
         super.viewDidLoad()
+        if userName != nil {
+            self.navigationItem.title = "\(userName!)"
+        } else {
+            print("ERROR: No such user.")
+            return
+        }
         
-        self.navigationItem.title = "\(userName!)"
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "...", style: .plain, target: self, action: #selector(moreOptions))
         self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: 20)], for: .normal)
@@ -149,6 +173,7 @@ class UserDetailVC: UIViewController, ConnectedImageDelegate, UITableViewDataSou
         setUpProfilePic()
         checkIfUserIsBlocked()
         
+        checkSize()
     }
     func checkIfUserIsBlocked() {
         UserBlocker.isUserOnBlockedList(blockedUserUID: usersUID!, vc: self)

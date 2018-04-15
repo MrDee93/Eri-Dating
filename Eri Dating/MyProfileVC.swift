@@ -11,7 +11,7 @@ import FirebaseDatabase
 import FirebaseAuth
 import CoreLocation
 
-class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource, UpdateUserLocationDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+final class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource, UpdateUserLocationDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     
     @IBOutlet var myProfileScrollView:UIScrollView!
@@ -51,7 +51,15 @@ class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         imageView.isUserInteractionEnabled = true
     }
     
-    
+    func checkSize() {
+        let width = UIScreen.main.bounds.size.width
+        
+        for constraint in self.userScrollView.constraints {
+            if constraint.identifier == "userScrollViewWidth" {
+                constraint.constant = width
+            }
+        }
+    }
     
     var loadingView:LoadingView?
     var loadedUserDetails:Bool = false
@@ -104,7 +112,13 @@ class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         
         myProfileScrollView.translatesAutoresizingMaskIntoConstraints = false
         myProfileScrollView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+
         
+    }
+    func checkForProfilePic() {
+        if let id = self.user?.id {
+            ProfilePhotoChecker.checkIfUserHasProfilePhoto(id)
+        }
     }
     
     func checkAndDisplayTutorial() {
@@ -258,7 +272,7 @@ class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         }))
         
         options.addAction(UIAlertAction(title: "Administrator Access", style: .default, handler: { (action) in
-            self.openAdminControl()
+            self.checkAndOpenAdminControl()
         }))
         
         options.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -266,7 +280,21 @@ class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         self.present(options, animated: true, completion: nil)
         
     }
+    func checkAndOpenAdminControl() {
+        if let userid = self.user?.id {
+            if userid.compare("A0VWHJvaYRNBIiu7rldLDjoefX73") == ComparisonResult.orderedSame ||
+                userid.compare("nWaCn7Zlu8S8UUbjyPhOfGV7kZo2") == ComparisonResult.orderedSame {
+                self.openAdminControl()
+            } else {
+                let alert = UIAlertController(title: "Error", message: "You do not have administrator privileges", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .destructive, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
     func openAdminControl() {
+        /*
         var adminTextField:UITextField
         
         let alert = UIAlertController(title: "Admin Control Panel", message: "Enter admin access code:", preferredStyle: .alert)
@@ -277,6 +305,7 @@ class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         }
         
         alert.addAction(UIAlertAction(title: "Enter", style: .destructive, handler: { (action) in
+            
             let textfieldText = alert.textFields?.last?.text
             if textfieldText?.compare("2816") == ComparisonResult.orderedSame || textfieldText?.compare("422") == ComparisonResult.orderedSame {
                 self.present(UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdminViewController"), animated: true, completion: nil)
@@ -289,8 +318,8 @@ class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
-        self.present(alert, animated: true, completion: nil)
-
+        self.present(alert, animated: true, completion: nil)*/
+        self.present(UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdminViewController"), animated: true, completion: nil)
     }
     
     func createBarButtonItems() {
@@ -327,6 +356,7 @@ class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         createBarButtonItems()
         
         self.textController.userUID = self.appDelegate.activeUser.uid
+        checkSize()
         
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -345,6 +375,7 @@ class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         let uid = Users.getCurrentUID()
         let database = Database.database().reference().child("users").child(uid)
         
+        self.user?.id = uid
         
         database.observeSingleEvent(of: .value, with: { (snapshot) in
             
@@ -364,8 +395,7 @@ class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
                 
                 self.reloadTable()
             }
-            // FIXME: Create option for other fields e.g. Relationship status, interests etc.
-            
+
             if let about = dictionary["about"] as? String {
                 self.user?.about = about
                 self.reloadTable()
@@ -382,7 +412,10 @@ class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         Users.getPhotosForUser(userUID: uid)
         NotificationCenter.default.addObserver(self, selector: #selector(receivedOtherPhotos), name: NSNotification.Name.init("FoundOtherPhotos"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(foundNoPhotos), name: NSNotification.Name.init("NoPhotosFound"), object: nil)
+        
+        // Loaded user details.
         checkAndDisplayTutorial()
+        checkForProfilePic()
     }
     
     @objc func foundNoPhotos() {

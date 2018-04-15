@@ -12,9 +12,10 @@
         <attribute name="profilePicture" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="profilePicUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="relationship_status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="UsersDB" positionX="-63" positionY="-18" width="128" height="225"/>
+        <element name="UsersDB" positionX="-63" positionY="-18" width="128" height="240"/>
     </elements>
 </model>

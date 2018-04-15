@@ -14,11 +14,11 @@ import FirebaseDatabase
 
 
 private let reuseIdentifier = "Cell"
-var arrayOfUsers = [EDUser]()
+private var arrayOfUsers = [EDUser]()
 
 
 
-class BrowseCVC: UICollectionViewController {
+final class BrowseCVC: UICollectionViewController {
     
     var fetchedResultsController:NSFetchedResultsController<NSFetchRequestResult>?
     var loadingView:LoadingView? {
@@ -154,11 +154,16 @@ class BrowseCVC: UICollectionViewController {
     
     
     @IBAction func refreshData(_ sender: Any) {
+        /*
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.persistentContainer.viewContext.performAndWait {
             self.prepareDB()
         }
         self.collectionView?.reloadData()
+        
+        */
+        print("Array of users: ", arrayOfUsers.count)
+        print("Fetched users: ", fetchedResultsController?.fetchedObjects?.count)
     }
     
    
@@ -170,12 +175,25 @@ class BrowseCVC: UICollectionViewController {
     
     // MARK: - Navigation
 
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "showUserDetail" {
+            let sourceCVC = sender as! UserCollectionViewCell
+            
+            if sourceCVC.user.name == nil {
+                print("Selected user is not valid")
+                self.collectionView?.reloadData()
+                return false
+            }
+        }
+        return true
+    }
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         if segue.identifier == "showUserDetail" {
             let sourceCVC = sender as! UserCollectionViewCell
+            
             var selectedUser:EDUser = EDUser()
             selectedUser = sourceCVC.user
             
@@ -200,7 +218,7 @@ class BrowseCVC: UICollectionViewController {
             return 0
         }
     }
-    var usersConnectionStatus:[EDUser:ConnectedImage]?
+    //var usersConnectionStatus:[EDUser:ConnectedImage]?
     
     // FIXME: See if this is used, if not refactor out!
     /*func userStatusExists(uid:String) -> Bool {
@@ -221,18 +239,25 @@ class BrowseCVC: UICollectionViewController {
         
         let index:Int = indexPath.row
         let userDB:UsersDB = fetchedResultsController!.fetchedObjects![index] as! UsersDB
-
-        let user:EDUser = Users.createUserFromCoreDataDB(userDB: userDB)
+        
+        
         
         
         if let usersName = userDB.name {
             cell.userLabel.text = usersName
         }
         
-        cell.user = user
+        if let userItemDB = userDB.user as? EDUser {
+            cell.user = userItemDB
+        } else {
+            let user:EDUser = Users.createUserFromCoreDataDB(userDB: userDB)
+            userDB.user = user
+            cell.user = user
+        }
+        //cell.user = user
         
         
-        if user.id != nil {
+        if cell.user.id != nil {
             cell.userConnectionImage?.delegate = cell
         }
         
@@ -244,7 +269,10 @@ class BrowseCVC: UICollectionViewController {
                 cell.userImage.layer.cornerRadius = 16
                 cell.userImage.layer.masksToBounds = true
                 cell.userImage.contentMode = .scaleAspectFill
+                
                 cell.userImage.loadImageUsingCacheWithUrlString(urlString: profileImageUrl)
+                // Need more testing before committing to this new code.
+                //cell.userImage.loadImageUsingCacheWithUrlString(urlString: profileImageUrl, size: cell.userImage.frame.size)
                 
                 self.countOfLoadedProfiles += 1
             }

@@ -39,7 +39,6 @@ class Message: NSObject {
         super.init()
         
         
-        
         fromId = dictionary["fromId"] as? String
         text = dictionary["text"] as? String
         toId = dictionary["toId"] as? String

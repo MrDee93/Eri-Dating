@@ -60,14 +60,15 @@ class UserListViewController: UIViewController, UITableViewDataSource, UITableVi
         self.present(userphototvc, animated: true, completion: nil)
     }
     func displayOptions(user:EDUser, indexPath:IndexPath) {
-        // Remove Profile picture
-        
-        // Remove Other Photos
-        
-        // Erase User Data
-        
-        
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Check profile photo", style: .default, handler: { (action) in
+            if let id = user.id {
+                ProfilePhotoChecker.checkIfUserHasProfilePhoto(id)
+            } else {
+                print("No ID value")
+            }
+        }))
         
         alert.addAction(UIAlertAction(title: "Show Photos", style: .destructive, handler: { (action) in
             self.showMorePhotos(user: user)
@@ -158,50 +159,7 @@ class UserListViewController: UIViewController, UITableViewDataSource, UITableVi
             }
         }
     }
-    
-    /*
-     let ref = Database.database().reference().child("users")
-     
-     ref.observeSingleEvent(of: .value, with: { (snapshot) in
-     let dictionary = snapshot.value as! NSDictionary
-     
-     dictionary.enumerateKeysAndObjects({ (key, obj, stop) in
-     let object = obj as! NSDictionary
-     let objectKey = key as! String
-     if (!self.isEqualTo(objectKey, appDelegate.activeUser.uid)) {
-     //if (!self.isEqualToUserEmail(myEmail: appDelegate.activeUser.email!, fetchedEmail: object.value(forKey: "email") as! String)) {
-     appDelegate.persistentContainer.viewContext.perform({
-     let newUser:UsersDB = NSEntityDescription.insertNewObject(forEntityName: "UsersDB", into: appDelegate.persistentContainer.viewContext) as! UsersDB
-     newUser.name = object.value(forKey: "name") as? String
-     newUser.dateofbirth = object.value(forKey: "dateofbirth") as? String
-     newUser.country = object.value(forKey: "country") as? String
-     newUser.city = object.value(forKey: "city") as? String
-     newUser.userID = object.value(forKey: "uid") as? String
-     if let about = object.value(forKey: "about") as? String {
-     newUser.about = about
-     }
-     if let profilePicUrl = object.value(forKey: "profileimageurl") as? String {
-     newUser.profilePicUrl = profilePicUrl
-     }
-     if let relationshipstatus = object.value(forKey: "relationship_status") as? String {
-     newUser.relationship_status = relationshipstatus
-     }
-     if let lookingfor = object.value(forKey: "looking_for") as? String {
-     newUser.looking_for = lookingfor
-     }
-     if let gender = object.value(forKey: "gender") as? String {
-     newUser.gender = gender
-     }
-     
-     appDelegate.saveContext()
-     NotificationCenter.default.post(name: NSNotification.Name.init("FetchData"), object:nil)
-     })
-     }
-     })
-     }, withCancel: nil)
-     }
-    */
-    
+
     
 
     /*

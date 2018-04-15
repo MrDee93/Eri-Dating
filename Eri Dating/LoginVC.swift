@@ -34,7 +34,8 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("View did load loginvc")
+        checkSize()
+        
         facebookLoginButton = FBSDKLoginButton()
         
         setupLoginManager()
@@ -43,8 +44,65 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
         
         createGestureRecognizers()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if (!fbSetup) {
+            fbSetup = true
+            setupFacebookLogin()
+        }
+        checkTermsOfUseHasBeenAgreed()
+    }
+    
+    func checkTermsOfUseHasBeenAgreed() {
+        if let termsOfUseBool = UserDefaults.standard.value(forKey: "TermsOfUseAgreed") as? Bool {
+            if (termsOfUseBool) {
+                self.termsOfUseSwitch.setOn(true, animated: true)
+            } else {
+                showTermsOfUse()
+            }
+        } else {
+            showTermsOfUse()
+        }
+    }
+    func showTermsOfUse() {
+        let alert = UIAlertController(title: "Terms of Use", message: "You must read & Agree to Eri Dating Terms of Use before using this app.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Show Terms of Use", style: .default, handler: { (action) in
+            // present terms of use
+            self.openTermsOfUse()
+        }))
+        alert.addAction(UIAlertAction(title: "I agree", style: .default, handler: { (action) in
+            // Continue
+            self.termsOfUseSwitch.setOn(true, animated: true)
+            UserDefaults.standard.set(true, forKey: "TermsOfUseAgreed")
+        }))
+        alert.addAction(UIAlertAction(title: "I disagree (This will close the app.)", style: .destructive, handler: { (action) in
+            UserDefaults.standard.set(false, forKey: "TermsOfUseAgreed")
+            exit(0)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func checkSize() {
+        let height = UIScreen.main.bounds.size.height
+        if height < 500 {
+            setVerticalConstraint(newConstant: 20)
+        }
+        
+    }
+    func setVerticalConstraint(newConstant:CGFloat) {
+        for constraint in self.view.constraints {
+            if constraint.identifier == "verticalSpaceUnderLogo" {
+                constraint.constant = newConstant
+               }
+        }
+    }
+    
     @objc func openTermsOfUse() {
-        print("Open terms of use!")
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let termsOfUseVC = storyboard.instantiateViewController(withIdentifier: "TermsOfUseVC") as! TermsOfUseVC
+        
+        self.navigationController?.pushViewController(termsOfUseVC, animated: true)
     }
     func createGestureRecognizers() {
         termsOfUseLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openTermsOfUse)))
@@ -59,15 +117,7 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
         appdelegate.loginManager = FBSDKLoginManager()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if (!fbSetup) {
-            print("SETTING UP FACEBOOK LOGIN@@@@@@@@")
-            fbSetup = true
-            setupFacebookLogin()
-        }
-    }
+    
    
     func setupFacebookLogin() {
         
@@ -94,13 +144,12 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func adjustHeight() {
-        print("Adjusting height")
         //let height = facebookLoginButton.frame.height
         let width = facebookLoginButton.frame.width
         let x = facebookLoginButton.frame.origin.x
         let y = facebookLoginButton.frame.origin.y
         
-        let newHeight = CGFloat(48) //height + CGFloat(20)
+        let newHeight = CGFloat(35) //height + CGFloat(20)
         let newWidth = CGFloat(200)
         
         facebookLoginButton.frame = CGRect(x: x, y: y, width: newWidth, height: newHeight)
@@ -280,15 +329,7 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
         self.passwordTextField.resignFirstResponder()
     }
     
-    @IBAction func debugModeTom(_ sender:Any) {
-        emailTextField.text = "Tom@lol.com"
-        passwordTextField.text = "tom123"
-    }
-    
-    @IBAction func debugMode(_ sender: Any) {
-        emailTextField.text = "Vienna@mail.com"
-        passwordTextField.text = "nero123"
-    }
+  
     
     
     @IBAction func signIn(_ sender: Any) {
@@ -296,7 +337,7 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
             return
         }
         if (!termsOfUseSwitch.isOn) {
-            print("Terms of use not accepted.")
+            self.showError(title: "ERROR", message: "You must accept the Terms of Use to use this app.")
             return
         }
         
@@ -342,14 +383,15 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
         alert.addAction(dismissButton)
         self.present(alert, animated: true, completion: nil)
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        print("PREPARE FOR SEGUE (ACE)")
     }
-    */
+    
 
 }

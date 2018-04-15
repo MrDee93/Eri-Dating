@@ -9,7 +9,7 @@
 import UIKit
 
 
-class TextController: NSObject, UITextFieldDelegate, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+final class TextController: NSObject, UITextFieldDelegate, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var oldString:String?
     var userUID:String?

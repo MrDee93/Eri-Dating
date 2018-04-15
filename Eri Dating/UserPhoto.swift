@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserPhoto {
+final class UserPhoto {
     /* Class UserPhoto stores the image name with the download url so that an image can be found and deleted
      * if necessary
      */
