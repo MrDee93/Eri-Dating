@@ -152,10 +152,7 @@ final class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINa
                 selectedUserImageView = imageView
                 selectedUserImageView?.fileName = fileName
             }
-            //let zoomingView:UIImageView = customZoom!.performZoomInWithDeleteOptionForStartingImageView(startingImageView: imageView)
-            /*zoomingView = customZoom!.performZoomInWithDeleteOptionForStartingImageView(startingImageView: imageView)
-            zoomingView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleZoomOut(tapGesture:))))
-            zoomingView?.isUserInteractionEnabled = true*/
+            
             let myStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
             let photoViewController = myStoryboard.instantiateViewController(withIdentifier: "PhotoViewController") as! PhotoViewController
             
@@ -168,32 +165,7 @@ final class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINa
             self.present(photoViewController, animated: true, completion: nil)
         }
     }
-    /*
-    // MARK: Custom Zoom function
-    var customZoom:CustomImageZoom?
-    var zoomingView:UIImageView?
-    @objc func customZoomIn(taprecognizer: UITapGestureRecognizer) {
-        if let imageView = taprecognizer.view as? UserPhotoImageView {
-            if imageView.image == UIImage(named: "noprofilepic") {
-                return
-            }
-            createDeletePhotoListener()
-            
-            customZoom = CustomImageZoom()
-            if let fileName = imageView.fileName {
-                selectedUserImageView = imageView
-                selectedUserImageView?.fileName = fileName
-            }
-            //let zoomingView:UIImageView = customZoom!.performZoomInWithDeleteOptionForStartingImageView(startingImageView: imageView)
-            zoomingView = customZoom!.performZoomInWithDeleteOptionForStartingImageView(startingImageView: imageView)
-            zoomingView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleZoomOut(tapGesture:))))
-            zoomingView?.isUserInteractionEnabled = true
-        }
-    }
-    @objc func handleZoomOut(tapGesture: UITapGestureRecognizer) {
-        customZoom?.handleZoomOut(tapGesture: tapGesture)
-        removeDeletePhotoListener()
-    }*/
+    
     // MARK: Delete Photo Listeners
     var selectedUserImageView:UserPhotoImageView?
     
@@ -239,7 +211,6 @@ final class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINa
                     }
                 }
             }
-            //print("Photo status: \(imageview.image) and is it equal to noprofilepic: ", imageview.image == UIImage(named: "noprofilepic") ? "True" : "False")
         }
     }
     
@@ -294,37 +265,11 @@ final class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINa
         }
     }
     func openAdminControl() {
-        /*
-        var adminTextField:UITextField
-        
-        let alert = UIAlertController(title: "Admin Control Panel", message: "Enter admin access code:", preferredStyle: .alert)
-        alert.addTextField { (textField) in
-            textField.textAlignment = .center
-            textField.keyboardType = .numberPad
-            textField.isSecureTextEntry = true
-        }
-        
-        alert.addAction(UIAlertAction(title: "Enter", style: .destructive, handler: { (action) in
-            
-            let textfieldText = alert.textFields?.last?.text
-            if textfieldText?.compare("2816") == ComparisonResult.orderedSame || textfieldText?.compare("422") == ComparisonResult.orderedSame {
-                self.present(UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdminViewController"), animated: true, completion: nil)
-            } else {
-                let deniedalert = UIAlertController(title: "Access Denied", message: "Incorrect access code", preferredStyle: .alert)
-                deniedalert.addAction(UIAlertAction(title: "Dismiss", style: .destructive, handler: nil))
-                self.present(deniedalert, animated: true, completion: nil)
-            }
-            
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)*/
         self.present(UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdminViewController"), animated: true, completion: nil)
     }
     
     func createBarButtonItems() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(openCamera))
-        //self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign out", style: .plain, target: self, action: #selector(logOut))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "...", style: .plain, target: self, action: #selector(moreOptions))
 
         self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: 18)], for: .normal)

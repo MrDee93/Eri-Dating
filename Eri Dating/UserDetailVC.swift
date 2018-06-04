@@ -388,6 +388,9 @@ final class UserDetailVC: UIViewController, ConnectedImageDelegate, UITableViewD
         }
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
