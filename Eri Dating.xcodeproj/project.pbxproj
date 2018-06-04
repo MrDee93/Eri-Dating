@@ -47,7 +47,6 @@
 		937E89731DEC84C6002976A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 937E89711DEC84C6002976A9 /* LaunchScreen.storyboard */; };
 		937E897E1DEC84C6002976A9 /* Eri_DatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937E897D1DEC84C6002976A9 /* Eri_DatingTests.swift */; };
 		9384308B1E06F577008392B1 /* ThumbnailCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9384308A1E06F577008392B1 /* ThumbnailCreator.swift */; };
-		93975BB01DF0D6AF009788F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93975BAF1DF0D6AF009788F8 /* GoogleService-Info.plist */; };
 		93975BB41DFF0B64009788F8 /* MessagesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93975BB31DFF0B64009788F8 /* MessagesTVC.swift */; };
 		93975BB71DFF1A0C009788F8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93975BB61DFF1A0C009788F8 /* Message.swift */; };
 		93975BB91E00891A009788F8 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93975BB81E00891A009788F8 /* Users.swift */; };
@@ -59,6 +58,8 @@
 		93A482B71FB34E9C00815256 /* UserPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A482B61FB34E9B00815256 /* UserPhoto.swift */; };
 		93A4A4281FA20C94008AA2A5 /* UserPhotoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A4271FA20C94008AA2A5 /* UserPhotoImageView.swift */; };
 		93C11C041FD6E45900A01043 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C11C031FD6E45900A01043 /* PhotoViewController.swift */; };
+		93C36AE220C5769600FB2866 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93C36AE120C5769600FB2866 /* Info.plist */; };
+		93C36AE420C576E600FB2866 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93C36AE320C576E600FB2866 /* GoogleService-Info.plist */; };
 		93D4F6B71F9A5B3400DFBFAE /* UserConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4F6B61F9A5B3400DFBFAE /* UserConnectionStatus.swift */; };
 		93D4F6B91F9F774900DFBFAE /* FrameEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4F6B81F9F774900DFBFAE /* FrameEstimator.swift */; };
 		93D4F6BB1F9F7E1700DFBFAE /* CustomImageZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D4F6BA1F9F7E1700DFBFAE /* CustomImageZoom.swift */; };
@@ -123,12 +124,10 @@
 		937E896D1DEC84C6002976A9 /* Eri_Dating.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eri_Dating.xcdatamodel; sourceTree = "<group>"; };
 		937E896F1DEC84C6002976A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		937E89721DEC84C6002976A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		937E89741DEC84C6002976A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		937E89791DEC84C6002976A9 /* Eri DatingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eri DatingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		937E897D1DEC84C6002976A9 /* Eri_DatingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eri_DatingTests.swift; sourceTree = "<group>"; };
 		937E897F1DEC84C6002976A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9384308A1E06F577008392B1 /* ThumbnailCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailCreator.swift; sourceTree = "<group>"; };
-		93975BAF1DF0D6AF009788F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		93975BB31DFF0B64009788F8 /* MessagesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTVC.swift; sourceTree = "<group>"; };
 		93975BB61DFF1A0C009788F8 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		93975BB81E00891A009788F8 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -141,6 +140,8 @@
 		93A4A4271FA20C94008AA2A5 /* UserPhotoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoImageView.swift; sourceTree = "<group>"; };
 		93B91BB41FB49AEF0072875F /* Eri Dating.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Eri Dating.entitlements"; sourceTree = "<group>"; };
 		93C11C031FD6E45900A01043 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		93C36AE120C5769600FB2866 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93C36AE320C576E600FB2866 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		93D4F6B61F9A5B3400DFBFAE /* UserConnectionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConnectionStatus.swift; sourceTree = "<group>"; };
 		93D4F6B81F9F774900DFBFAE /* FrameEstimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameEstimator.swift; sourceTree = "<group>"; };
 		93D4F6BA1F9F7E1700DFBFAE /* CustomImageZoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageZoom.swift; sourceTree = "<group>"; };
@@ -211,7 +212,8 @@
 		937E89591DEC84C6002976A9 = {
 			isa = PBXGroup;
 			children = (
-				93975BAF1DF0D6AF009788F8 /* GoogleService-Info.plist */,
+				93C36AE320C576E600FB2866 /* GoogleService-Info.plist */,
+				93C36AE120C5769600FB2866 /* Info.plist */,
 				937E89641DEC84C6002976A9 /* Eri Dating */,
 				937E897C1DEC84C6002976A9 /* Eri DatingTests */,
 				937E89631DEC84C6002976A9 /* Products */,
@@ -246,7 +248,6 @@
 				937E89691DEC84C6002976A9 /* Main.storyboard */,
 				937E896F1DEC84C6002976A9 /* Assets.xcassets */,
 				937E89711DEC84C6002976A9 /* LaunchScreen.storyboard */,
-				937E89741DEC84C6002976A9 /* Info.plist */,
 			);
 			path = "Eri Dating";
 			sourceTree = "<group>";
@@ -464,10 +465,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93C36AE220C5769600FB2866 /* Info.plist in Resources */,
 				937E89731DEC84C6002976A9 /* LaunchScreen.storyboard in Resources */,
 				937E89701DEC84C6002976A9 /* Assets.xcassets in Resources */,
-				93975BB01DF0D6AF009788F8 /* GoogleService-Info.plist in Resources */,
 				937E896B1DEC84C6002976A9 /* Main.storyboard in Resources */,
+				93C36AE420C576E600FB2866 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
