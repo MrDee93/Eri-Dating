@@ -106,7 +106,7 @@ class SignUpThirdPageVC: UIViewController, UITextFieldDelegate {
 
                     Users.addUserToDB(email: email, name: username, dateOfBirth: userdateofbirth, country: usercountry, city: usercity, userUID: userUID, gender:usergender)
                     UserDefaults.standard.setValue(1, forKey: "NewlyRegistered")
-                    UserDefaults.standard.synchronize()
+                    //UserDefaults.standard.synchronize()
                 } else {
                     print("NO USERUID")
                 }

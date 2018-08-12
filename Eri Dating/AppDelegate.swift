@@ -62,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             //print("Stored notification token")
         } else {
             UserDefaults.standard.setValue(token, forKey: "User_Notification_Token")
-            UserDefaults.standard.synchronize()
+            //UserDefaults.standard.synchronize()
             NotificationCenter.default.addObserver(self, selector: #selector(uploadStoredToken), name: NSNotification.Name.init("Connected"), object: nil)
             //print("Awaiting connectivity to store Notification token")
         }
@@ -138,7 +138,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                         if UserDefaults.standard.value(forKey: "NewlyRegistered") as? Int == 1 {
                             self.showMyProfileVC()
                             UserDefaults.standard.removeObject(forKey: "NewlyRegistered")
-                            UserDefaults.standard.synchronize()
+                            //UserDefaults.standard.synchronize()
                         } else {
                             self.showMain()
                         }

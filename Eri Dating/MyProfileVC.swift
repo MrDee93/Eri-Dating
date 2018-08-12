@@ -135,7 +135,7 @@ final class MyProfileVC: UIViewController, UIImagePickerControllerDelegate, UINa
                 alert.addAction(cancel)
                 self.present(alert, animated: true, completion: nil)
                 UserDefaults.standard.removeObject(forKey: "ShowTutorial")
-                UserDefaults.standard.synchronize()
+                //UserDefaults.standard.synchronize()
             }
         }
     }

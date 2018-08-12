@@ -145,7 +145,7 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
     
     func adjustHeight() {
         //let height = facebookLoginButton.frame.height
-        let width = facebookLoginButton.frame.width
+        //let width = facebookLoginButton.frame.width
         let x = facebookLoginButton.frame.origin.x
         let y = facebookLoginButton.frame.origin.y
         
@@ -157,7 +157,7 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
         let facebookHeightAnchor = facebookLoginButton.heightAnchor.constraint(equalToConstant: newHeight)
         facebookHeightAnchor.isActive = true
         facebookHeightAnchor.priority = UILayoutPriority(1000)
-        let facebookWidthAnchor = facebookLoginButton.widthAnchor.constraint(equalToConstant: newWidth)
+        facebookLoginButton.widthAnchor.constraint(equalToConstant: newWidth)
         facebookHeightAnchor.isActive = true
         facebookHeightAnchor.priority = UILayoutPriority(1000)
     }
@@ -204,6 +204,21 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
                     }
                 }
             })
+            // FIXME: New method.
+            /*
+            Auth.auth().signInAndRetrieveData(with: credential) { (retrievedResult, error) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                    return
+                }
+                if retrievedResult?.user != nil {
+                    
+                    
+                }
+                
+                
+            }*/
+            
         }
     }
     
@@ -279,20 +294,20 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
                 //print("Name is: ", usersname)
                 //name = usersname
                 UserDefaults.standard.setValue(name, forKey: "FB-Name")
-                UserDefaults.standard.synchronize()
+                //UserDefaults.standard.synchronize()
             }
             if let gender = resultDictionary.value(forKey: "gender") as? String {
                 //print("Users gender is: ", usergender)
                 //gender = usergender
                 UserDefaults.standard.setValue(gender, forKey: "FB-Gender")
-                UserDefaults.standard.synchronize()
+                //UserDefaults.standard.synchronize()
             }
             if let email = resultDictionary.value(forKey: "email") as? String {
                 //print("Email is: ", usersemail)
                 //email = usersemail
                 
                 UserDefaults.standard.setValue(email, forKey: "FB-Email")
-                UserDefaults.standard.synchronize()
+                //UserDefaults.standard.synchronize()
             }
             
             self.pushRegistrationViewForFB()
@@ -353,7 +368,7 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
                     }
                     self.showError(title: "Failed to sign in", message: errorString!)
                 } else {
-                    print("Signed in as user: \(user!.email!)")
+                    //print("Signed in as user: \(user!.email!)")
                     //appDelegate.showMain()
                     //self.navigationController?.dismiss(animated: false, completion: nil)
                 }

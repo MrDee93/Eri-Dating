@@ -194,26 +194,32 @@ final class ChatLogControllerCVC: UICollectionViewController, UICollectionViewDe
     private func handleVideoSelectedForUrl(videoUrl: URL) {
         let filename = NSUUID().uuidString + ".mov"
         
-        let uploadTask = Storage.storage().reference().child("message_videos").child(filename).putFile(from: videoUrl, metadata: nil, completion: { (metadata, error) in
+        let storageReference = Storage.storage().reference().child("message_videos").child(filename)
+        let uploadTask = storageReference.putFile(from: videoUrl, metadata: nil, completion: { (metadata, error) in
             if error != nil {
                 print("Failed to upload video.", error!)
             }
             
-            if let storageUrl = metadata?.downloadURL()?.absoluteString {
-                print("Storage URL:", storageUrl)
-                
-                if let thumbnailImage = self.thumbnailImageForVideoUrl(videoUrl) {
-                    // FIXME: EDIT SIZE OF VIDEO THUMBNAIL HERE.
-                    let size = CGSize(width: 200, height: 200)
-                    let newThumbnailImage = ThumbnailCreator.createThumbnail(withSize: size, image: thumbnailImage)
-                    self.uploadToFirebaseStorageUsingImage(image: newThumbnailImage, completion: { (imageUrl) in
-                        let properties:[String:Any] = ["imageUrl":imageUrl, "imageWidth": newThumbnailImage.size.width, "imageHeight": newThumbnailImage.size.height, "videoUrl":storageUrl]
+            storageReference.downloadURL(completion: { (url, err) in
+                if url != nil {
+                    if let thumbnailImage = self.thumbnailImageForVideoUrl(videoUrl) {
+                        // FIXME: EDIT SIZE OF VIDEO THUMBNAIL HERE.
+                        let size = CGSize(width: 200, height: 200)
+                        let newThumbnailImage = ThumbnailCreator.createThumbnail(withSize: size, image: thumbnailImage)
+                        self.uploadToFirebaseStorageUsingImage(image: newThumbnailImage, completion: { (imageUrl) in
+                            let properties:[String:Any] = ["imageUrl":imageUrl, "imageWidth": newThumbnailImage.size.width, "imageHeight": newThumbnailImage.size.height, "videoUrl":url]
+                            
+                            self.sendMessageWithProperties(properties: properties)
+                        })
                         
-                        self.sendMessageWithProperties(properties: properties)
-                    })
-                    
+                    }
                 }
-            }
+            })
+            //if let storageUrl = metadata?.downloadURL()?.absoluteString {
+                //print("Storage URL:", storageUrl)
+                
+            
+            //}
             
         })
         
@@ -274,10 +280,14 @@ final class ChatLogControllerCVC: UICollectionViewController, UICollectionViewDe
                     print("Failed to upload image: ", error!)
                     return
                 }
+                ref.downloadURL(completion: { (url, err) in
+                    if url != nil {
+                        if let imageUrl = url?.absoluteString {
+                        completion(imageUrl)
+                        }
+                    }
+                })
                 
-                if let imageUrl = metadata?.downloadURL()?.absoluteString {
-                    completion(imageUrl)
-                }
             })
         }
     }

@@ -14,16 +14,16 @@ class FBRegistration {
         UserDefaults.standard.removeObject(forKey: "FBRegistrationProcess")
         UserDefaults.standard.removeObject(forKey: "FB-Name")
         UserDefaults.standard.removeObject(forKey: "FB-Gender")
-        UserDefaults.standard.synchronize()
+        //UserDefaults.standard.synchronize()
     }
     
     static func setFBRegistrationTrue() {
         UserDefaults.standard.set(true, forKey: "FBRegistrationProcess")
-        UserDefaults.standard.synchronize()
+        //UserDefaults.standard.synchronize()
     }
     static func setFBRegistrationFalse() {
         UserDefaults.standard.removeObject(forKey: "FBRegistrationProcess")
-        UserDefaults.standard.synchronize()
+        //UserDefaults.standard.synchronize()
     }
     
     static func checkFBData() -> Bool {

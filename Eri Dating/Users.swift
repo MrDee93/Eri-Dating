@@ -397,9 +397,14 @@ final class Users {
             } else {
                 NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "UploadComplete"), object: nil)
                 
-                let url = metadata?.downloadURL()
-
-                self.addPhotoToUserDB(userUID: userID, pictureUrl: url!.absoluteString, pictureFilename: photoIDString)
+                //let url = metadata?.downloadURL()
+                //FIXME: new code
+                imageRef.downloadURL(completion: { (url, error) in
+                    if url != nil {
+                        self.addPhotoToUserDB(userUID: userID, pictureUrl: url!.absoluteString, pictureFilename: photoIDString)
+                    }
+                })
+                
             }
         }
         
@@ -446,9 +451,12 @@ final class Users {
             } else {
                 NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "UploadComplete"), object: nil)
                 
-                let url = storageMetaData?.downloadURL()
+                imageReference.downloadURL(completion: { (url, err) in
+                    if url != nil {
+                        self.addProfileImageUrlTo(uid: userID, profileImageUrl: url!.absoluteString)
+                    }
+                })
                 
-                self.addProfileImageUrlTo(uid: userID, profileImageUrl: url!.absoluteString)
             }
         })
         uploadTask.resume()

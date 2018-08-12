@@ -220,7 +220,7 @@ class SignUpSecondPageVC: UIViewController, CLLocationManagerDelegate, UIPickerV
                         Users.addUserToDB(email: userEmail, name: username, dateOfBirth: dateofbirth, country: self.getCountry(), city: self.getCity(), userUID: uid, gender: usergender)
                         FBRegistration.removeFBRegistration()
                         UserDefaults.standard.set(true, forKey: "ShowTutorial")
-                        UserDefaults.standard.synchronize()
+                        //UserDefaults.standard.synchronize()
                         self.dismissView()
                     }
                 })

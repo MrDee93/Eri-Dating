@@ -152,7 +152,7 @@ final class BrowseCVC: UICollectionViewController {
         }
     }
     
-    
+    // FIXME: PROBLEMS HERE
     @IBAction func refreshData(_ sender: Any) {
         /*
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -162,8 +162,9 @@ final class BrowseCVC: UICollectionViewController {
         self.collectionView?.reloadData()
         
         */
-        print("Array of users: ", arrayOfUsers.count)
-        print("Fetched users: ", fetchedResultsController?.fetchedObjects?.count)
+        //print("Array of users: ", arrayOfUsers.count)
+        //print("Fetched users: ", fetchedResultsController?.fetchedObjects?.count)
+        self.collectionView?.reloadData()
     }
     
    
@@ -218,21 +219,7 @@ final class BrowseCVC: UICollectionViewController {
             return 0
         }
     }
-    //var usersConnectionStatus:[EDUser:ConnectedImage]?
-    
-    // FIXME: See if this is used, if not refactor out!
-    /*func userStatusExists(uid:String) -> Bool {
-        if usersConnectionStatus != nil {
-        for userconnectionstatus in usersConnectionStatus! as [EDUser:ConnectedImage] {
-            let user = userconnectionstatus.key
-            let caughtID = user.id
-            if(caughtID == uid) {
-                return true
-            }
-        }
-        }
-        return false
-    }*/
+   
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:UserCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! UserCollectionViewCell
@@ -271,7 +258,7 @@ final class BrowseCVC: UICollectionViewController {
                 cell.userImage.contentMode = .scaleAspectFill
                 
                 cell.userImage.loadImageUsingCacheWithUrlString(urlString: profileImageUrl)
-                // Need more testing before committing to this new code.
+                // Does not make a difference in loading speed.
                 //cell.userImage.loadImageUsingCacheWithUrlString(urlString: profileImageUrl, size: cell.userImage.frame.size)
                 
                 self.countOfLoadedProfiles += 1
@@ -286,19 +273,6 @@ final class BrowseCVC: UICollectionViewController {
         
         return cell
     }
-    
-    
-    // ConnectedImage Delegate
-    /*
-    func updateTableWith(indexpath:IndexPath, image:UIImage) {
-        //self.collectionView?.reloadData()
-        
-        //self.collectionView?.reloadItems(at: [indexpath])
-        //let cell = self.collectionView(self.collectionView!, cellForItemAt: indexpath) as! UserCollectionViewCell
-        
-        //cell.onlineStatusImageView.image = image
-        print("Update \(indexpath) with new image")
-    }*/
     
     
     
