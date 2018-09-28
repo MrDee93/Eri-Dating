@@ -12,11 +12,40 @@ import FBSDKLoginKit
 import FirebaseAuth
 
 class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
-    
+	// New features
+	var loginViewVisible:Bool? = false
+	@IBOutlet var makeLoginVisibleButton:UIButton!
+	
+	@IBAction func makeLoginVisible() {
+		showLoginView()
+	}
+	
+	func showLoginView() {
+		UIView.animate(withDuration: 0.5) {
+			self.inputFieldsStackView.isHidden = false
+		}
+		
+		makeLoginVisibleButton.isHidden = true
+		emailTextField.becomeFirstResponder()
+		
+	}
+	func hideLoginView() {
+		UIView.animate(withDuration: 0.5) {
+			self.inputFieldsStackView.isHidden = true
+		}
+		
+		makeLoginVisibleButton.isHidden = false
+	}
+	
+	
+	
     @IBOutlet var termsOfUseSwitch:UISwitch!
     @IBOutlet var termsOfUseLabel:UILabel!
+	
+	// Stack views
     @IBOutlet var signInStackView:UIStackView!
-
+	@IBOutlet var inputFieldsStackView:UIStackView!
+	
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
 
@@ -34,6 +63,7 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		
         checkSize()
         
         facebookLoginButton = FBSDKLoginButton()
@@ -51,19 +81,19 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
             fbSetup = true
             setupFacebookLogin()
         }
+		inputFieldsStackView.isHidden = true
+		
         checkTermsOfUseHasBeenAgreed()
     }
     
     func checkTermsOfUseHasBeenAgreed() {
         if let termsOfUseBool = UserDefaults.standard.value(forKey: "TermsOfUseAgreed") as? Bool {
             if (termsOfUseBool) {
-                self.termsOfUseSwitch.setOn(true, animated: true)
-            } else {
-                showTermsOfUse()
+                //self.termsOfUseSwitch.setOn(true, animated: true)
+				return
             }
-        } else {
-            showTermsOfUse()
-        }
+		}
+		showTermsOfUse()
     }
     func showTermsOfUse() {
         let alert = UIAlertController(title: "Terms of Use", message: "You must read & Agree to Eri Dating Terms of Use before using this app.", preferredStyle: .alert)
@@ -72,8 +102,6 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
             self.openTermsOfUse()
         }))
         alert.addAction(UIAlertAction(title: "I agree", style: .default, handler: { (action) in
-            // Continue
-            self.termsOfUseSwitch.setOn(true, animated: true)
             UserDefaults.standard.set(true, forKey: "TermsOfUseAgreed")
         }))
         alert.addAction(UIAlertAction(title: "I disagree (This will close the app.)", style: .destructive, handler: { (action) in
@@ -123,14 +151,21 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
         
         facebookLoginButton.delegate = self
         facebookLoginButton.translatesAutoresizingMaskIntoConstraints = false
-        
+		
+		facebookLoginButton.layer.cornerRadius = 0
+		
         let arrayOfPermissionsRequired = Array(["public_profile", "email"])
         
         facebookLoginButton.readPermissions = arrayOfPermissionsRequired
         
 
         self.signInStackView.insertArrangedSubview(facebookLoginButton, at: 1)
+		
+		facebookLoginButton.leftAnchor.constraint(equalTo: self.signInStackView.leftAnchor).isActive = true
+		facebookLoginButton.rightAnchor.constraint(equalTo: self.signInStackView.rightAnchor).isActive = true
         
+		
+		
         //facebookLoginButton.frame = getFacebookFrame()
         findAndRemoveFBHeightConstraint()
         adjustHeight()
@@ -144,8 +179,6 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func adjustHeight() {
-        //let height = facebookLoginButton.frame.height
-        //let width = facebookLoginButton.frame.width
         let x = facebookLoginButton.frame.origin.x
         let y = facebookLoginButton.frame.origin.y
         
@@ -194,6 +227,7 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
             FBCredentials = credential
 
             FBRegistration.setFBRegistrationTrue()
+			/*
             Auth.auth().signIn(with: credential, completion: { (user, error) in
                 if error != nil {
                     print(error!.localizedDescription)
@@ -203,21 +237,22 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
                         self.checkUIDInDB(uid)
                     }
                 }
-            })
+            })*/
             // FIXME: New method.
-            /*
-            Auth.auth().signInAndRetrieveData(with: credential) { (retrievedResult, error) in
-                if error != nil {
-                    print(error!.localizedDescription)
-                    return
-                }
-                if retrievedResult?.user != nil {
-                    
-                    
-                }
-                
-                
-            }*/
+			Auth.auth().signInAndRetrieveData(with: credential) { (retrievedResult, error) in
+				if error != nil {
+					print(error?.localizedDescription)
+					return
+				}
+				
+				if retrievedResult?.user != nil {
+					self.loginResult = result
+					if let uid = retrievedResult?.user.uid {
+						self.checkUIDInDB(uid)
+					}
+					
+				}
+			}
             
         }
     }
@@ -335,26 +370,26 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
      - Parameter loginButton: The button that was clicked.
      */
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        
         //print("User logged out!")
     }
     
     @objc func handleBackgroundTap(_ sender:Any) {
         self.emailTextField.resignFirstResponder()
         self.passwordTextField.resignFirstResponder()
+		
+		hideLoginView()
     }
     
   
     
     
     @IBAction func signIn(_ sender: Any) {
+		
+		
         if emailTextField.text == "" || passwordTextField.text == "" {
             return
         }
-        if (!termsOfUseSwitch.isOn) {
-            self.showError(title: "ERROR", message: "You must accept the Terms of Use to use this app.")
-            return
-        }
+		
         
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             appDelegate.FirebaseAuth.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
@@ -402,11 +437,7 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        print("PREPARE FOR SEGUE (ACE)")
-    }
+	
     
 
 }

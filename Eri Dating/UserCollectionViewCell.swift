@@ -48,9 +48,11 @@ class UserCollectionViewCell: UICollectionViewCell, ConnectedImageDelegate {
     required init?(coder aDecoder:NSCoder) {
         super.init(coder: aDecoder)
 
-        
+		
     }
-    
+	func setupConstraint(collectionViewWidth: CGFloat) {
+		self.widthAnchor.constraint(equalToConstant: collectionViewWidth/3).isActive = true
+	}
     
     
 }

@@ -40,11 +40,19 @@ final class BrowseCVC: UICollectionViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        self.collectionView?.reloadData()
-
-
+        print("VIEW DID APPEAR")
+		
+		if let filterChanged = UserDefaults.standard.value(forKey: "FilterChanged-ED") as? Bool {
+			if filterChanged == true {
+				self.prepareDB()
+				print("FILTER CHANGED")
+				UserDefaults.standard.removeObject(forKey: "FilterChanged-ED")
+			}
+		} else {
+			self.collectionView?.reloadData()
+		}
     }
+	
     @objc func loadBrowseView() {
         self.tabBarController?.selectedIndex = 0
         self.collectionView?.reloadData()
@@ -164,7 +172,11 @@ final class BrowseCVC: UICollectionViewController {
         */
         //print("Array of users: ", arrayOfUsers.count)
         //print("Fetched users: ", fetchedResultsController?.fetchedObjects?.count)
-        self.collectionView?.reloadData()
+		
+		let filtersViewController = FiltersViewController()
+		self.navigationController?.pushViewController(filtersViewController, animated: true)
+		
+        //self.collectionView?.reloadData()
     }
     
    
@@ -211,7 +223,7 @@ final class BrowseCVC: UICollectionViewController {
         return 1
     }
 
-
+	
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if(fetchedResultsController?.fetchedObjects != nil) {
             return fetchedResultsController!.fetchedObjects!.count
@@ -226,9 +238,7 @@ final class BrowseCVC: UICollectionViewController {
         
         let index:Int = indexPath.row
         let userDB:UsersDB = fetchedResultsController!.fetchedObjects![index] as! UsersDB
-        
-        
-        
+
         
         if let usersName = userDB.name {
             cell.userLabel.text = usersName
@@ -241,9 +251,7 @@ final class BrowseCVC: UICollectionViewController {
             userDB.user = user
             cell.user = user
         }
-        //cell.user = user
-        
-        
+		
         if cell.user.id != nil {
             cell.userConnectionImage?.delegate = cell
         }
@@ -251,16 +259,11 @@ final class BrowseCVC: UICollectionViewController {
         
         if let profileImageUrl = userDB.profilePicUrl {
             cell.user.profilePicUrl = profileImageUrl
-            
             DispatchQueue.main.async {
                 cell.userImage.layer.cornerRadius = 16
                 cell.userImage.layer.masksToBounds = true
                 cell.userImage.contentMode = .scaleAspectFill
-                
                 cell.userImage.loadImageUsingCacheWithUrlString(urlString: profileImageUrl)
-                // Does not make a difference in loading speed.
-                //cell.userImage.loadImageUsingCacheWithUrlString(urlString: profileImageUrl, size: cell.userImage.frame.size)
-                
                 self.countOfLoadedProfiles += 1
             }
         } else {
@@ -268,7 +271,6 @@ final class BrowseCVC: UICollectionViewController {
              cell.userImage.layer.cornerRadius = 16
              cell.userImage.layer.masksToBounds = true
              cell.userImage.contentMode = .scaleAspectFill
-            
         }
         
         return cell
@@ -282,5 +284,6 @@ final class BrowseCVC: UICollectionViewController {
         return true
     }
 
+	
 
 }

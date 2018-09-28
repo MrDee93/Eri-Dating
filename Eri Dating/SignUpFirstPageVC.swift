@@ -170,7 +170,8 @@ class SignUpFirstPageVC: UIViewController, UITextFieldDelegate {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = UIDatePickerMode.date
         datePicker.calendar = Calendar.current
-        datePicker.maximumDate = Date.init(timeIntervalSinceNow: -504576000)
+        //datePicker.maximumDate = Date.init(timeIntervalSinceNow: -504576000) // minimum is now 18
+		datePicker.maximumDate = Date.init(timeIntervalSinceNow: -568036800)
 
         sender.inputView = datePicker
         sender.inputAccessoryView = returnToolbar()

@@ -101,8 +101,36 @@ final class Users {
                 let object = obj as! NSDictionary
                 let objectKey = key as! String
                 if (!self.isEqualTo(objectKey, appDelegate.activeUser.uid)) {
-                //if (!self.isEqualToUserEmail(myEmail: appDelegate.activeUser.email!, fetchedEmail: object.value(forKey: "email") as! String)) {
                     appDelegate.persistentContainer.viewContext.perform({
+						if let photoPreference = UserDefaults.standard.value(forKey: "PhotoFilter-ED") as? Int {
+							if photoPreference == 1 {
+								if let profileimageurlexist = object.value(forKey: "profileimageurl") as? String {
+									if profileimageurlexist == nil || profileimageurlexist == "" {
+										return
+									}
+								} else {
+									return
+								}
+							}
+							
+							// 1: Photo only
+							
+						}
+						if let gender = UserDefaults.standard.value(forKey: "GenderFilter-ED") as? Int {
+							if gender == 1 {
+								if object.value(forKey: "gender") as? String == "M" {
+									return
+								}
+							}
+							if gender == 2 {
+								if object.value(forKey: "gender") as? String == "F" {
+									return
+								}
+							}
+							// 1: Female only
+							// 2: Male only
+						}
+						
                         guard let newUserName = object.value(forKey: "name") as? String else {
                             return
                         }
